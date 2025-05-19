@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <title>Phintar Energi Adventure</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .tile {
+            min-height: 120px;
+            position: relative;
+        }
+        .player-indicator {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 font-sans">
     <div class="game-container flex flex-col md:flex-row max-w-6xl mx-auto p-4 gap-6">
@@ -33,7 +51,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden z-50" id="question-modal">
+    <div class="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden z-50" id="question-modal">
         <div class="modal-content bg-white rounded-lg shadow-lg p-6 w-full max-w-md animate-fade-in">
             <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
             <div id="modal-text" class="mb-6 prose max-h-60 overflow-y-auto"></div>
@@ -43,16 +61,6 @@
             </button>
         </div>
     </div>
-
-    <!-- Audio Elements -->
-    <audio id="dice-roll" src="sounds/dice_roll.mp3"></audio>
-    <audio id="correct-answer" src="sounds/correct_answer.mp3"></audio>
-    <audio id="wrong-answer" src="sounds/wrong_answer.mp3"></audio>
-    <audio id="click-sound" src="sounds/click.mp3"></audio>
-    <audio id="finish-sound" src="sounds/finish.mp3"></audio>
-    <audio id="level1-music" src="sounds/level1_bg.mp3"></audio>
-    <audio id="level2-music" src="sounds/level2_bg.mp3"></audio>
-    <audio id="level3-music" src="sounds/level3_bg.mp3"></audio>
 
     <script src="levels.js"></script>
     <script src="game.js"></script>
