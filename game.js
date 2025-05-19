@@ -1,63 +1,43 @@
 // Game state
+let currentLevel = 1;
 const board = document.getElementById('board');
 const dice = document.getElementById('dice');
-const players = [0, 0, 0, 0];
-let currentPlayer = 0;
-const scores = [0, 0, 0, 0];
-const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
-const nextBtn = document.getElementById('next-btn');
-let currentLevel = 1;
-let finishedPlayers = [];
+const nextBtn = document.getElementById('next-level');
+const currentPlayerDisplay = document.getElementById('current-player');
+const leaderboardList = document.getElementById('leaderboard-list');
+const modalTitle = document.getElementById('modal-title');
+const modalText = document.getElementById('modal-text');
+const optionsContainer = document.getElementById('options-container');
+const closeModalBtn = document.getElementById('close-modal');
 
-// Audio elements
-const diceRoll = new Audio('sounds/dice.mp3');
-const correctSound = new Audio('sounds/correct.mp3');
-const wrongSound = new Audio('sounds/wrong.mp3');
-const finishSound = new Audio('sounds/finish.mp3');
-const levelMusic = [
-    new Audio('sounds/level1.mp3'),
-    new Audio('sounds/level2.mp3'),
-    new Audio('sounds/level3.mp3')
-];
+let players = [0, 0, 0, 0]; // Player positions
+let currentPlayer = 0;
+let scores = [0, 0, 0, 0]; // Player scores
+let finishedPlayers = []; // Track finished players
 
 // Initialize game
 updateBoard();
 updateLeaderboard();
-setupEventListeners();
 
-function setupEventListeners() {
-    dice.addEventListener('click', () => {
-        playSound(diceRoll);
-        rollDice();
-    });
-    
-    nextBtn.addEventListener('click', goToNextLevel);
-    
-    document.getElementById('close-modal').addEventListener('click', closeModal);
-}
+// Event Listeners
+dice.addEventListener('click', rollDice);
+nextBtn.addEventListener('click', goToNextLevel);
+closeModalBtn.addEventListener('click', closeModal);
 
 function updateLeaderboard() {
-    const leaderboardList = document.getElementById('leaderboard-list');
     leaderboardList.innerHTML = '';
     players.forEach((_, playerIndex) => {
-        const playerName = `Pemain ${playerIndex + 1}`;
-        const playerScore = scores[playerIndex];
         const listItem = document.createElement('li');
-        listItem.textContent = `${playerName}: ${playerScore} poin`;
+        listItem.textContent = `Pemain ${playerIndex + 1}: ${scores[playerIndex]} poin`;
         leaderboardList.appendChild(listItem);
     });
 }
 
 function showModal(title, text, options = [], imageUrl = '') {
-    const modal = document.getElementById('question-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalText = document.getElementById('modal-text');
-    const optionsContainer = document.getElementById('options-container');
-    
     // Add image if provided
     let modalContent = '';
     if (imageUrl) {
-        modalContent += `<img src="${imageUrl}" class="w-full h-48 object-cover mb-4">`;
+        modalContent += `<img src="${imageUrl}" class="modal-image">`;
     }
     
     // Add text content
@@ -74,7 +54,7 @@ function showModal(title, text, options = [], imageUrl = '') {
         const button = document.createElement('button');
         button.className = "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full mt-2";
         button.innerHTML = `
-            ${option.imageUrl ? `<img src="${option.imageUrl}" class="h-6 inline mr-2">` : ''}
+            ${option.imageUrl ? `<img src="${option.imageUrl}" class="inline mr-2 modal-option-image">` : ''}
             ${option.text}
         `;
         button.onclick = () => {
@@ -84,13 +64,12 @@ function showModal(title, text, options = [], imageUrl = '') {
         optionsContainer.appendChild(button);
     });
     
-    modal.classList.remove('hidden');
+    document.getElementById('question-modal').classList.remove('hidden');
 }
 
 function closeModal() {
-    const modal = document.getElementById('question-modal');
-    modal.classList.add('hidden');
-    document.getElementById('options-container').innerHTML = '';
+    document.getElementById('question-modal').classList.add('hidden');
+    optionsContainer.innerHTML = '';
 }
 
 function checkTile(tileIndex, playerIndex) {
@@ -124,17 +103,21 @@ function checkTile(tileIndex, playerIndex) {
                 <p>${currentLevelData.content}</p>
                 ${currentLevelData.example ? `<p class="mt-2 text-sm text-gray-500">Contoh: ${currentLevelData.example}</p>` : ''}
             `;
-            showModal('Info', infoContent, []);
+            showModal('Info', infoContent, [], currentLevelData.imageUrl || '');
             break;
         case 'reward':
             scores[playerIndex] += 10;
             updateLeaderboard();
-            playSound(correctSound);
             break;
         case 'finish':
             if (!finishedPlayers.includes(playerIndex)) {
                 finishedPlayers.push(playerIndex);
                 showFinishMessage(playerIndex);
+                
+                // Show next level button if at least one player finishes
+                if (finishedPlayers.length >= 1) {
+                    nextBtn.classList.remove('hidden');
+                }
             }
             break;
     }
@@ -144,9 +127,7 @@ function checkAnswer(isCorrect, playerIndex) {
     if (isCorrect) {
         scores[playerIndex] += 10;
         updateLeaderboard();
-        playSound(correctSound);
     } else {
-        playSound(wrongSound);
         alert('Jawaban salah! Coba lagi!');
     }
 }
@@ -154,11 +135,7 @@ function checkAnswer(isCorrect, playerIndex) {
 function validateChallenge(playerIndex) {
     // Simulate correct answer
     scores[playerIndex] += 20;
-    leaderboard.push({ name: `Pemain ${playerIndex + 1}`, score: scores[playerIndex] });
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
     updateLeaderboard();
-    playSound(correctSound);
-    closeModal();
 }
 
 function rollDice() {
@@ -168,6 +145,7 @@ function rollDice() {
     const maxTileIndex = levels[`level${currentLevel}`].length - 1;
     if (players[currentPlayer] === maxTileIndex) {
         showFinishMessage(currentPlayer);
+        nextBtn.classList.remove('hidden');
     }
     
     // Move to next player
@@ -183,8 +161,7 @@ function rollDice() {
 }
 
 function updateCurrentPlayer() {
-    const currentPlayerElement = document.getElementById('current-player');
-    currentPlayerElement.textContent = `Giliran: Pemain ${currentPlayer + 1}`;
+    currentPlayerDisplay.textContent = `Giliran: Pemain ${currentPlayer + 1}`;
 }
 
 function movePlayer(playerIndex, steps) {
@@ -220,7 +197,7 @@ function updateBoard() {
         players.forEach((position, playerIndex) => {
             if (position === index) {
                 const playerIndicator = document.createElement('div');
-                playerIndicator.className = `player-indicator absolute font-bold text-white flex items-center justify-center`;
+                playerIndicator.className = `player-indicator ${playerColors[playerIndex % playerColors.length]} absolute font-bold text-white flex items-center justify-center`;
                 playerIndicator.textContent = playerIndex + 1;
                 
                 // Position based on player index
@@ -244,7 +221,6 @@ function updateBoard() {
                 }
                 
                 // Style the indicator
-                playerIndicator.style.backgroundColor = playerColors[playerIndex % playerColors.length];
                 playerIndicator.style.width = '20px';
                 playerIndicator.style.height = '20px';
                 playerIndicator.style.borderRadius = '50%';
@@ -269,13 +245,7 @@ function getTileColor(type) {
 }
 
 function showFinishMessage(playerIndex) {
-    playSound(finishSound);
     alert(`Pemain ${playerIndex + 1} menyelesaikan level ${currentLevel}!`);
-    
-    // Show next level button if at least one player finishes
-    if (finishedPlayers.length >= 1) {
-        document.getElementById('next-level').classList.remove('hidden');
-    }
 }
 
 function goToNextLevel() {
@@ -283,20 +253,10 @@ function goToNextLevel() {
         currentLevel++;
         players = [0, 0, 0, 0];
         finishedPlayers = [];
-        document.getElementById('next-level').classList.add('hidden');
+        nextBtn.classList.add('hidden');
         currentPlayer = 0;
         updateCurrentPlayer();
         updateBoard();
         updateLeaderboard();
     }
-}
-
-function playSound(sound) {
-    if (!sound) return;
-    sound.currentTime = 0;
-    sound.play().catch(() => {}); // Handle autoplay restrictions
-}
-
-function saveLeaderboard() {
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 }
