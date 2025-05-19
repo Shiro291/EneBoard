@@ -1,0 +1,32 @@
+/* style.css */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.tile {
+    min-height: 120px;
+    position: relative;
+}
+
+.player-indicator {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.quiz-option img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
