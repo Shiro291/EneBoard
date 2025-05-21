@@ -24,6 +24,31 @@ dice.addEventListener('click', rollDice);
 nextBtn.addEventListener('click', goToNextLevel);
 closeModalBtn.addEventListener('click', closeModal);
 
+// Add debug button functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Add keyboard shortcut for testing (press 1/2/3)
+    document.addEventListener('keydown', (e) => {
+        if (e.key >= '1' && e.key <= '3') {
+            setDebugLevel(parseInt(e.key));
+        }
+    });
+});
+
+function setDebugLevel(level) {
+    const newLevel = typeof level === 'number' ? level : parseInt(document.getElementById('debug-level').value);
+    
+    if (isNaN(newLevel) || newLevel < 1 || newLevel > 3) return;
+    
+    currentLevel = newLevel;
+    players = [0, 0, 0, 0];
+    currentPlayer = 0;
+    finishedPlayers = [];
+    updateBoard();
+    updateLeaderboard();
+    document.getElementById('current-level').textContent = currentLevel;
+    nextBtn.classList.add('hidden');
+}
+
 function updateLeaderboard() {
     leaderboardList.innerHTML = '';
     players.forEach((_, playerIndex) => {
@@ -31,6 +56,16 @@ function updateLeaderboard() {
         listItem.textContent = `Pemain ${playerIndex + 1}: ${scores[playerIndex]} poin`;
         leaderboardList.appendChild(listItem);
     });
+}
+
+// Fisher-Yates shuffle algorithm for randomizing options
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
 }
 
 function showModal(title, text, options = [], imageUrl = '') {
@@ -49,8 +84,11 @@ function showModal(title, text, options = [], imageUrl = '') {
     // Clear previous options
     optionsContainer.innerHTML = '';
     
+    // Randomize options
+    const randomizedOptions = shuffleArray(options);
+    
     // Add options with optional images
-    options.forEach(option => {
+    randomizedOptions.forEach(option => {
         const button = document.createElement('button');
         button.className = "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full mt-2";
         button.innerHTML = `
@@ -224,7 +262,6 @@ function updateBoard() {
                 playerIndicator.style.width = '20px';
                 playerIndicator.style.height = '20px';
                 playerIndicator.style.borderRadius = '50%';
-                
                 tileElement.appendChild(playerIndicator);
             }
         });
@@ -258,5 +295,6 @@ function goToNextLevel() {
         updateCurrentPlayer();
         updateBoard();
         updateLeaderboard();
+        document.getElementById('current-level').textContent = currentLevel;
     }
 }
