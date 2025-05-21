@@ -209,7 +209,7 @@ const levels = {
     ],
    level2: [
     // 1. Start Level 2
-    { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
+    { type: 'start', content: 'Mari kita belajar perubahan energi!', icon: '🏁' },
 
     // 2. Quiz 1
     {
