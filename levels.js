@@ -207,420 +207,456 @@ const levels = {
             icon: '🏆'
         }
     ],
-    level2: [
-        // 1. Start Level 2
-        { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
-        // 2. Info: Transformasi Dasar
-        { 
-            type: 'info', 
-            content: 'Energi bisa berubah bentuk melalui alat tertentu',
-            example: 'Setrika: Listrik → Panas',
-            imageUrl: 'assets/energy-transformation.jpg', // Placeholder image
-            icon: '🔄'
-        },
-        // 3. Quiz C7: Perubahan Energi Lampu
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di lampu?',
-            imageUrl: 'assets/question-7.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik → Cahaya', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Baterai → Bunyi', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '💡'
-        },
-        // 4. Info: Energi Bunyi
-        { 
-            type: 'info', 
-            content: 'Alat musik mengubah energi gerak menjadi bunyi',
-            example: 'Gitar: Gerakan tangan → Bunyi',
-            imageUrl: 'assets/sound-energy.jpg', // Placeholder image
-            icon: '🔊'
-        },
-        // 5. Quiz C8: Transformasi Kipas Angin
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di kipas angin?',
-            imageUrl: 'assets/question-8.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Kimia → Panas', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Cahaya → Bunyi', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🌀'
-        },
-        // 6. Reward: +15 Poin
-        { 
-            type: 'reward', 
-            content: '+15 Poin! 🌟 Kuasai transformasi energi!',
-            icon: '⭐'
-        },
-        // 7. Info: Energi Kimia
-        { 
-            type: 'info', 
-            content: 'Bensin menyimpan energi kimia',
-            example: 'Mobil: Bensin → Gerak',
-            imageUrl: 'assets/chemical-energy.jpg', // Placeholder image
-            icon: '🚗'
-        },
-        // 8. Quiz C9: Energi Mobil
-        { 
-            type: 'quiz', 
-            question: 'Energi apa yang menggerakkan mobil?',
-            imageUrl: 'assets/question-9.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Bensin (Kimia → Gerak)', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Angin', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '⛽'
-        },
-        // 9. Info: Panel Surya
-        { 
-            type: 'info', 
-            content: 'Panel surya mengubah cahaya → listrik',
-            example: 'Digunakan di kalkulator surya',
-            imageUrl: 'assets/solar-panel.jpg', // Placeholder image
-            icon: '☀️'
-        },
-        // 10. Quiz C10: Transformasi Kompor Gas
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di kompor gas?',
-            imageUrl: 'assets/question-10.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Kimia → Panas', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Panas → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🔥'
-        },
-        // 11. Info: PLTA
-        { 
-            type: 'info', 
-            content: 'PLTA menggunakan air untuk menghasilkan listrik',
-            example: 'Air → Gerak turbin → Listrik',
-            imageUrl: 'assets/hydro-power.jpg', // Placeholder image
-            icon: '🌊'
-        },
-        // 12. Quiz C11: Urutan PLN
-        { 
-            type: 'quiz', 
-            question: 'Urutan energi di PLN?',
-            imageUrl: 'assets/question-11.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Batu bara → Panas → Listrik', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Angin → Listrik → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Matahari → Kimia → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🏭'
-        },
-        // 13. Info: Blender
-        { 
-            type: 'info', 
-            content: 'Blender mengubah listrik → gerak → menghancurkan buah',
-            example: 'Contoh transformasi energi bertahap',
-            imageUrl: 'assets/blender-energy.jpg', // Placeholder image
-            icon: '料理'
-        },
-        // 14. Quiz C12: Transformasi Blender
-        { 
-            type: 'quiz', 
-            question: 'Urutan transformasi energi di blender?',
-            imageUrl: 'assets/question-12.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak (motor) → Menghancurkan buah', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Gerak → Listrik → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Panas → Kimia → Listrik', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '⚡'
-        },
-        // 15. Finish Level 2
-        { 
-            type: 'finish', 
-            content: 'Level 2 Tuntas! Menuju energi alternatif!',
-            icon: '🏆'
-        }
-    ],
-    level3: [
-        // 1. Start Level 2
-        { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
-        // 2. Info: Transformasi Dasar
-        { 
-            type: 'info', 
-            content: 'Energi bisa berubah bentuk melalui alat tertentu',
-            example: 'Setrika: Listrik → Panas',
-            imageUrl: 'assets/energy-transformation.jpg', // Placeholder image
-            icon: '🔄'
-        },
-        // 3. Quiz C7: Perubahan Energi Lampu
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di lampu?',
-            imageUrl: 'assets/question-7.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik → Cahaya', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Baterai → Bunyi', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '💡'
-        },
-        // 4. Info: Energi Bunyi
-        { 
-            type: 'info', 
-            content: 'Alat musik mengubah energi gerak menjadi bunyi',
-            example: 'Gitar: Gerakan tangan → Bunyi',
-            imageUrl: 'assets/sound-energy.jpg', // Placeholder image
-            icon: '🔊'
-        },
-        // 5. Quiz C8: Transformasi Kipas Angin
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di kipas angin?',
-            imageUrl: 'assets/question-8.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Kimia → Panas', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Cahaya → Bunyi', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🌀'
-        },
-        // 6. Reward: +15 Poin
-        { 
-            type: 'reward', 
-            content: '+15 Poin! 🌟 Kuasai transformasi energi!',
-            icon: '⭐'
-        },
-        // 7. Info: Energi Kimia
-        { 
-            type: 'info', 
-            content: 'Bensin menyimpan energi kimia',
-            example: 'Mobil: Bensin → Gerak',
-            imageUrl: 'assets/chemical-energy.jpg', // Placeholder image
-            icon: '🚗'
-        },
-        // 8. Quiz C9: Energi Mobil
-        { 
-            type: 'quiz', 
-            question: 'Energi apa yang menggerakkan mobil?',
-            imageUrl: 'assets/question-9.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Bensin (Kimia → Gerak)', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Angin', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '⛽'
-        },
-        // 9. Info: Panel Surya
-        { 
-            type: 'info', 
-            content: 'Panel surya mengubah cahaya → listrik',
-            example: 'Digunakan di kalkulator surya',
-            imageUrl: 'assets/solar-panel.jpg', // Placeholder image
-            icon: '☀️'
-        },
-        // 10. Quiz C10: Transformasi Kompor Gas
-        { 
-            type: 'quiz', 
-            question: 'Perubahan energi di kompor gas?',
-            imageUrl: 'assets/question-10.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Kimia → Panas', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Panas → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🔥'
-        },
-        // 11. Info: PLTA
-        { 
-            type: 'info', 
-            content: 'PLTA menggunakan air untuk menghasilkan listrik',
-            example: 'Air → Gerak turbin → Listrik',
-            imageUrl: 'assets/hydro-power.jpg', // Placeholder image
-            icon: '🌊'
-        },
-        // 12. Quiz C11: Urutan PLN
-        { 
-            type: 'quiz', 
-            question: 'Urutan energi di PLN?',
-            imageUrl: 'assets/question-11.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Batu bara → Panas → Listrik', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Angin → Listrik → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Matahari → Kimia → Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🏭'
-        },
-        // 13. Info: Blender
-        { 
-            type: 'info', 
-            content: 'Blender mengubah listrik → gerak → menghancurkan buah',
-            example: 'Contoh transformasi energi bertahap',
-            imageUrl: 'assets/blender-energy.jpg', // Placeholder image
-            icon: '料理'
-        },
-        // 14. Quiz C12: Transformasi Blender
-        { 
-            type: 'quiz', 
-            question: 'Urutan transformasi energi di blender?',
-            imageUrl: 'assets/question-12.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Listrik → Gerak (motor) → Menghancurkan buah', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Gerak → Listrik → Cahaya', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Panas → Kimia → Listrik', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '⚡'
-        },
-        // 15. Finish Level 2
-        { 
-            type: 'finish', 
-            content: 'Level 2 Tuntas! Menuju energi alternatif!',
-            icon: '🏆'
-        }
-    ],
+   level2: [
+    // 1. Start Level 2
+    { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
+
+    // 2. Quiz 1
+    {
+      type: 'quiz',
+      question: 'Desa Cikondang, Jawa Barat, mengandalkan PLTA dari Sungai Citarum untuk listrik. Saat musim kemarau panjang, debit air sungai menyusut 60%. Apa dampak utama bagi aktivitas warga?',
+      imageUrl: 'assets/question-1.jpg',
+      options: [
+        { text: 'Harga listrik turun karena permintaan energi berkurang', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Pemadaman listrik bergilir delapan jam per hari karena turbin PLTA tidak bisa beroperasi tanpa aliran air yang memadai', correct: true, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Kualitas air minum meningkat karena sungai tidak tercemar limbah', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '💧'
+    },
+
+    // 3. Info: Keuntungan Energi Alternatif
+    {
+      type: 'info',
+      content: 'Energi alternatif mengurangi ketergantungan pada bahan bakar fosil, menurunkan polusi, dan memanfaatkan limbah lokal untuk pembangkit.',
+      example: 'Contoh: biogas dari limbah kedelai',
+      imageUrl: 'assets/alternative-benefits.jpg',
+      icon: '🌱'
+    },
+
+    // 4. Quiz 2
+    {
+      type: 'quiz',
+      question: 'Pabrik tempe “Sari Rasa” di Malang menghasilkan dua ton ampas kedelai per hari. Bagaimana limbah ini dapat diubah menjadi energi alternatif?',
+      imageUrl: 'assets/question-2.jpg',
+      options: [
+        { text: 'Dibakar langsung untuk menghasilkan panas meski menimbulkan polusi udara', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dijadikan pakan ternak tanpa proses konversi energi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Diolah menjadi biogas melalui fermentasi anaerobik karena ampas kedelai mengandung bahan organik yang dapat menghasilkan metana', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🧪'
+    },
+
+    // 5. Reward: +10 Poin
+    { type: 'reward', content: '+10 Poin! 🌟 Kamu telah menyelesaikan kuis energi alternatif!', icon: '⭐' },
+
+    // 6. Quiz 3
+    {
+      type: 'quiz',
+      question: 'Angkutan umum TransJakarta dengan mesin hybrid (listrik + diesel) terjebak macet di Bundaran HI selama dua jam. Sumber energi mana yang paling efisien untuk mempertahankan sistem pendingin dan penerangan?',
+      imageUrl: 'assets/question-3.jpg',
+      options: [
+        { text: 'Baterai listrik karena emisi nol dan menghemat bahan bakar saat kendaraan diam', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Kombinasi keduanya agar mesin tidak cepat panas dan baterai tetap terisi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Baterai listrik karena emisi nol dan menghemat bahan bakar saat kendaraan diam', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🚌'
+    },
+
+    // 7. Quiz 4
+    {
+      type: 'quiz',
+      question: 'Desa Wae Rebo, Flores, terletak di lembah pegunungan dengan aliran sungai kecil berarus deras. Energi alternatif apa yang paling cocok untuk desa ini?',
+      imageUrl: 'assets/question-4.jpg',
+      options: [
+        { text: 'Generator diesel meski mahal dan menimbulkan polusi', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Pembangkit listrik tenaga air mikrohidro memanfaatkan aliran sungai untuk menggerakkan turbin kecil', correct: true, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Panel surya meski sering tertutup kabut pegunungan', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏞️'
+    },
+
+    // 8. Quiz 5
+    {
+      type: 'quiz',
+      question: 'Sebuah keluarga di Yogyakarta mengganti sepuluh lampu pijar (60 watt) dengan LED (10 watt). Apa dampak nyata yang mereka rasakan setelah tiga bulan?',
+      imageUrl: 'assets/question-5.jpg',
+      options: [
+        { text: 'Cahaya menjadi lebih redup meski nyala lampu terasa sama terang bagi penglihatan', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Tagihan listrik turun hingga lima puluh persen karena LED mengonsumsi daya jauh lebih rendah', correct: true, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Suhu ruangan meningkat sedikit karena LED juga menghasilkan panas meski lebih sedikit', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '💡'
+    },
+
+    // 9. Info: Aplikasi Nyata
+    {
+      type: 'info',
+      content: 'Contoh nyata integrasi: beberapa desa di Jawa Barat telah menggunakan mikrohidro untuk penerangan rumah.',
+      example: 'Desa Pengalengan, Jawa Barat',
+      imageUrl: 'assets/real-world.jpg',
+      icon: '🌍'
+    },
+
+    // 10. Quiz 6
+    {
+      type: 'quiz',
+      question: 'Restoran di Bali menghasilkan tiga ratus liter limbah minyak goreng bekas per bulan. Cara terbaik mengolah limbah ini menjadi energi?',
+      imageUrl: 'assets/question-6.jpg',
+      options: [
+        { text: 'Dikonversi menjadi biodiesel melalui proses transesterifikasi untuk bahan bakar mesin diesel', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dibuang ke tanah yang mencemari lingkungan', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Dikonversi menjadi biodiesel melalui proses transesterifikasi untuk bahan bakar mesin diesel', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🍳'
+    },
+
+    // 11. Quiz 7
+    {
+      type: 'quiz',
+      question: 'Kapal nelayan di Kepulauan Seribu memasang panel surya untuk penerangan malam. Mengapa sistem ini kurang efektif saat musim penghujan?',
+      imageUrl: 'assets/question-7.jpg',
+      options: [
+        { text: 'Panel surya mudah rusak oleh hujan asam padahal jarang terjadi di Indonesia', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Nelayan lebih sering melaut siang hari sehingga sistem malam tidak optimal', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Intensitas cahaya matahari rendah karena awan tebal menghalangi penyerapan energi surya', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '⛵'
+    },
+
+    // 12. Quiz 8
+    {
+      type: 'quiz',
+      question: 'Mal di Surabaya ingin mengurangi tagihan listrik dengan energi alternatif. Langkah awal paling realistis?',
+      imageUrl: 'assets/question-8.jpg',
+      options: [
+        { text: 'Membatasi jam operasional AC yang mengurangi kenyamanan pengunjung', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Mengganti lampu dekorasi dengan lilin yang tidak praktis dan berisiko kebakaran', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Memasang panel surya di atap parkiran memanfaatkan lahan kosong untuk menghasilkan listrik', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏬'
+    },
+
+    // 13. Quiz 9
+    {
+      type: 'quiz',
+      question: 'Pabrik di Semarang menghasilkan limbah panas 400°C dari mesin produksi. Bagaimana memanfaatkan limbah ini untuk menurunkan biaya operasional?',
+      imageUrl: 'assets/question-9.jpg',
+      options: [
+        { text: 'Menyalurkan panas ke pemukiman warga yang teknisnya tidak feasible', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Menggunakan turbin uap untuk menghasilkan listrik tambahan dari limbah panas', correct: true, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Membuang panas ke atmosfer melalui cerobong asap yang membuang potensi energi', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏭'
+    },
+
+    // 14. Quiz 10
+    {
+      type: 'quiz',
+      question: 'Desa Tenganan, Bali, memiliki banyak pohon kelapa. Bagaimana sabut kelapa dimanfaatkan sebagai sumber energi alternatif?',
+      imageUrl: 'assets/question-10.jpg',
+      options: [
+        { text: 'Dijadikan kerajinan tangan yang tidak terkait produksi energi', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dibuang ke laut yang mencemari ekosistem', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Dibuat menjadi briket arang sabut kelapa yang memiliki nilai kalori tinggi dan mudah dibakar', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🥥'
+    },
+
+    // 15. Finish Level 2
+    { type: 'finish', content: 'Level 2 Tuntas! Siap melangkah ke energi terbarukan lanjutan?', icon: '🏆' }
+  ],
+      icon: '💧'
+    },
+
+    // 3. Quiz 2
+    {
+      type: 'quiz',
+      question: 'Pabrik tempe “Sari Rasa” di Malang menghasilkan dua ton ampas kedelai per hari. Bagaimana limbah ini dapat diubah menjadi energi alternatif?',
+      imageUrl: 'assets/question-2.jpg',
+      options: [
+        { text: 'Diolah menjadi biogas melalui fermentasi anaerobik karena ampas kedelai mengandung bahan organik yang dapat menghasilkan metana', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dibakar langsung untuk menghasilkan panas meski menimbulkan polusi udara', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Dijadikan pakan ternak tanpa proses konversi energi', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🧪'
+    },
+
+    // 4. Quiz 3
+    {
+      type: 'quiz',
+      question: 'Angkutan umum TransJakarta dengan mesin hybrid (listrik + diesel) terjebak macet di Bundaran HI selama dua jam. Sumber energi mana yang paling efisien untuk mempertahankan sistem pendingin dan penerangan?',
+      imageUrl: 'assets/question-3.jpg',
+      options: [
+        { text: 'Baterai listrik karena emisi nol dan menghemat bahan bakar saat kendaraan diam', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Mesin diesel karena tenaga besar untuk menyalakan AC secara terus-menerus', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Kombinasi keduanya agar mesin tidak cepat panas dan baterai tetap terisi', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🚌'
+    },
+
+    // 5. Quiz 4
+    {
+      type: 'quiz',
+      question: 'Desa Wae Rebo, Flores, terletak di lembah pegunungan dengan aliran sungai kecil berarus deras. Energi alternatif apa yang paling cocok untuk desa ini?',
+      imageUrl: 'assets/question-4.jpg',
+      options: [
+        { text: 'Pembangkit listrik tenaga air mikrohidro memanfaatkan aliran sungai untuk menggerakkan turbin kecil', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Panel surya meski sering tertutup kabut pegunungan', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Generator diesel meski mahal dan menimbulkan polusi', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏞️'
+    },
+
+    // 6. Quiz 5
+    {
+      type: 'quiz',
+      question: 'Sebuah keluarga di Yogyakarta mengganti sepuluh lampu pijar (60 watt) dengan LED (10 watt). Apa dampak nyata yang mereka rasakan setelah tiga bulan?',
+      imageUrl: 'assets/question-5.jpg',
+      options: [
+        { text: 'Tagihan listrik turun hingga lima puluh persen karena LED mengonsumsi daya jauh lebih rendah', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Suhu ruangan meningkat sedikit karena LED juga menghasilkan panas meski lebih sedikit', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Cahaya menjadi lebih redup meski nyala lampu terasa sama terang bagi penglihatan', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '💡'
+    },
+
+    // 7. Quiz 6
+    {
+      type: 'quiz',
+      question: 'Restoran di Bali menghasilkan tiga ratus liter limbah minyak goreng bekas per bulan. Cara terbaik mengolah limbah ini menjadi energi?',
+      imageUrl: 'assets/question-6.jpg',
+      options: [
+        { text: 'Dikonversi menjadi biodiesel melalui proses transesterifikasi untuk bahan bakar mesin diesel', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dibuang ke tanah yang mencemari lingkungan', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Dijual ke pabrik sabun yang tidak terkait produksi energi', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🍳'
+    },
+
+    // 8. Quiz 7
+    {
+      type: 'quiz',
+      question: 'Kapal nelayan di Kepulauan Seribu memasang panel surya untuk penerangan malam. Mengapa sistem ini kurang efektif saat musim penghujan?',
+      imageUrl: 'assets/question-7.jpg',
+      options: [
+        { text: 'Intensitas cahaya matahari rendah karena awan tebal menghalangi penyerapan energi surya', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Panel surya mudah rusak oleh hujan asam padahal jarang terjadi di Indonesia', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Nelayan lebih sering melaut siang hari sehingga sistem malam tidak optimal', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '⛵'
+    },
+
+    // 9. Quiz 8
+    {
+      type: 'quiz',
+      question: 'Mal di Surabaya ingin mengurangi tagihan listrik dengan energi alternatif. Langkah awal paling realistis?',
+      imageUrl: 'assets/question-8.jpg',
+      options: [
+        { text: 'Memasang panel surya di atap parkiran memanfaatkan lahan kosong untuk menghasilkan listrik', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Membatasi jam operasional AC yang mengurangi kenyamanan pengunjung', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Mengganti lampu dekorasi dengan lilin yang tidak praktis dan berisiko kebakaran', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏬'
+    },
+
+    // 10. Quiz 9
+    {
+      type: 'quiz',
+      question: 'Pabrik di Semarang menghasilkan limbah panas 400°C dari mesin produksi. Bagaimana memanfaatkan limbah ini untuk menurunkan biaya operasional?',
+      imageUrl: 'assets/question-9.jpg',
+      options: [
+        { text: 'Menggunakan turbin uap untuk menghasilkan listrik tambahan dari limbah panas', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Membuang panas ke atmosfer melalui cerobong asap yang membuang potensi energi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Menyalurkan panas ke pemukiman warga yang teknisnya tidak feasible', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏭'
+    },
+
+    // 11. Quiz 10
+    {
+      type: 'quiz',
+      question: 'Desa Tenganan, Bali, memiliki banyak pohon kelapa. Bagaimana sabut kelapa dimanfaatkan sebagai sumber energi alternatif?',
+      imageUrl: 'assets/question-10.jpg',
+      options: [
+        { text: 'Dibuat menjadi briket arang sabut kelapa yang memiliki nilai kalori tinggi dan mudah dibakar', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dijadikan kerajinan tangan yang tidak terkait produksi energi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Dibuang ke laut yang mencemari ekosistem', correct: false, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🥥'
+    },
+
+    // 12. Info: Keuntungan Energi Alternatif
+    {
+      type: 'info',
+      content: 'Energi alternatif mengurangi ketergantungan pada bahan bakar fosil, menurunkan polusi, dan bisa memanfaatkan limbah lokal.',
+      example: 'Biogas, mikrohidro, biodiesel',
+      imageUrl: 'assets/alternative-benefits.jpg',
+      icon: '🌱'
+    },
+
+    // 13. Reward: +10 Poin
+    { type: 'reward', content: '+10 Poin! 🌟 Kamu telah menyelesaikan kuis energi alternatif!', icon: '⭐' },
+
+    // 14. Info: Aplikasi Nyata
+    {
+      type: 'info',
+      content: 'Contoh nyata: Desa-desa di Indonesia sudah menggunakan mikrohidro dan biogas untuk penerangan dan memasak.',
+      example: 'Desa Pengalengan (mikrohidro), Desa Nglanggeran (biogas)',
+      imageUrl: 'assets/real-world.jpg',
+      icon: '🌍'
+    },
+
+    // 15. Finish Level 2
+    { type: 'finish', content: 'Level 2 Tuntas! Siap melangkah ke energi terbarukan lanjutan?', icon: '🏆' }
+  ],
+      level3: [
+    // 1. Start Level 3
+    { type: 'start', content: 'Tantangan besar: integrasi energi & air bersih!', icon: '🏁' },
+
+    // 2. Quiz L3-1
+    {
+      type: 'quiz',
+      question: 'Pulau Komodo, NTT, memiliki sinar matahari intensif tetapi kekurangan air tawar. Rancang sistem energi yang sekaligus menghasilkan air bersih untuk 500 penduduk!',
+      imageUrl: 'assets/question-l3-1.jpg',
+      options: [
+        { text: 'PLTA mikrohidro skala mini tidak bisa digunakan karena sungai di pulau kecil tidak memiliki aliran besar', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Generator diesel dan unit pengolahan air hujan mahal, bergantung suku cadang terbatas, kurang berkelanjutan', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Panel surya terintegrasi dengan sistem desalinasi tenaga matahari sehingga menghasilkan listrik sekaligus air tawar operasional', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '☀️'
+    },
+
+    // 3. Info: Panel Surya & Desalinasi
+    {
+      type: 'info',
+      content: 'Kombinasi panel surya dan teknologi desalinasi memungkinkan pemanfaatan energi matahari sekaligus pengolahan air laut menjadi air minum.',
+      example: 'Panel + reverse osmosis tenaga surya',
+      imageUrl: 'assets/info-desalination.jpg',
+      icon: '💧'
+    },
+
+    // 4. Quiz L3-2
+    {
+      type: 'quiz',
+      question: 'Kota Jakarta ingin mengurangi 30% emisi CO₂ dari 10.000 angkutan umum berbahan bakar solar. Kebijakan apa yang paling efektif jangka panjang?',
+      imageUrl: 'assets/question-l3-2.jpg',
+      options: [
+        { text: 'Membatasi jam operasi bus hanya solusi sementara tanpa mengubah sumber energi', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Menambah pajak kendaraan pribadi tidak langsung menyasar polusi bus', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Mengonversi seluruh armada menjadi bus listrik menghilangkan emisi langsung dan menurunkan ketergantungan solar', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🚍'
+    },
+
+    // 5. Quiz L3-3
+    {
+      type: 'quiz',
+      question: 'Desa Lembah Hijau, Kalimantan, terpencil di hutan tropis. 70% warga belum teraliri listrik. Rancang sistem energi memanfaatkan sumber daya lokal!',
+      imageUrl: 'assets/question-l3-3.jpg',
+      options: [
+        { text: 'Panel surya dengan baterai sulit optimal karena dahan dan daun menghalangi sinar', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Generator diesel mahal, suplai bahan bakar rentan terputus', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Mikrohidro skala kecil memanfaatkan aliran sungai + biogas dari limbah hutan memberikan listrik dan gas memasak', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🌳'
+    },
+
+    // 6. Reward: +15 Poin
+    { type: 'reward', content: '+15 Poin! 🌟 Ide solutifmu brilian!', icon: '⭐' },
+
+    // 7. Info: Energi Terbarukan Terpadu
+    {
+      type: 'info',
+      content: 'Menggabungkan mikrohidro dan biogas memberikan pasokan listrik stabil dan gas untuk kebutuhan memasak di daerah terpencil.',
+      example: 'Mikrohidro + fermentasi limbah kayu',
+      imageUrl: 'assets/info-combined.jpg',
+      icon: '🔄'
+    },
+
+    // 8. Quiz L3-4
+    {
+      type: 'quiz',
+      question: 'Pabrik kelapa sawit di Riau menghasilkan 20 ton limbah tandan kosong per hari. Bagaimana optimalkan limbah ini untuk energi dan kurangi polusi?',
+      imageUrl: 'assets/question-l3-4.jpg',
+      options: [
+        { text: 'Dibakar langsung untuk uap menghasilkan polusi signifikan', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Dijual ke pabrik kertas bukan solusi energi langsung', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Fermentasi limbah menjadi biogas untuk listrik dan residu jadi pupuk organik mengurangi polusi', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🌴'
+    },
+
+    // 9. Quiz L3-5
+    {
+      type: 'quiz',
+      question: 'Rumah sakit di Papua Pegunungan hanya mengandalkan generator diesel yang sering mati. Solusi energi mana yang tahan cuaca ekstrem & terjangkau?',
+      imageUrl: 'assets/question-l3-5.jpg',
+      options: [
+        { text: 'PLTA lokal tidak stabil karena aliran sungai kering musim kemarau', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Kincir angin tidak optimal karena kecepatan angin di lembah tidak konsisten', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Panel surya tahan badai dengan baterai lithium menyimpan cadangan energi cocok untuk iklim ekstrem', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🩺'
+    },
+
+    // 10. Info: Solar Resilience
+    {
+      type: 'info',
+      content: 'Panel surya modern dilapisi pelindung tahan air dan angin sehingga cocok untuk lokasi rawan cuaca ekstrem.',
+      example: 'Solar 72-cell dengan casing tahan banting',
+      imageUrl: 'assets/info-solar.jpg',
+      icon: '🌞'
+    },
+
+    // 11. Quiz L3-6
+    {
+      type: 'quiz',
+      question: 'Pabrik tekstil di Surabaya menghasilkan limbah panas 600°C. Bagaimana memanfaatkannya untuk mengurangi biaya operasional?',
+      imageUrl: 'assets/question-l3-6.jpg',
+      options: [
+        { text: 'Menyalurkan panas ke perumahan tidak feasible dari segi distribusi', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Membuang panas melalui cerobong asap membuang energi potensial', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Menggunakan turbin uap dari limbah panas menghasilkan listrik tambahan dan menurunkan biaya', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏭'
+    },
+
+    // 12. Quiz L3-7
+    {
+      type: 'quiz',
+      question: 'Desa Tenganan, Bali, memiliki pohon kelapa. Rancang sistem energi memanfaatkan semua bagian kelapa (sabut, tempurung, air)!',
+      imageUrl: 'assets/question-l3-7.jpg',
+      options: [
+        { text: 'Menjual air kelapa saja mengabaikan potensi energi biomassa', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Membakar tempurung untuk memasak menghasilkan polusi tinggi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Briket arang sabut, biogas dari tempurung, dan panel surya sistem pendingin air kelapa memanfaatkan semua sumber', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🥥'
+    },
+
+    // 13. Info: Biaya & Manfaat
+    {
+      type: 'info',
+      content: 'Briket, biogas, dan panel surya memiliki biaya instalasi awal, tapi operasional rendah dan ramah lingkungan.',
+      example: 'Biaya ROI dalam 2–3 tahun',
+      imageUrl: 'assets/info-cost.jpg',
+      icon: '💰'
+    },
+
+    // 14. Quiz L3-8
+    {
+      type: 'quiz',
+      question: 'Sebuah sekolah di Lombok ingin menjadi pusat edukasi energi terbarukan. Proyek percontohan paling inspiratif?',
+      imageUrl: 'assets/question-l3-8.jpg',
+      options: [
+        { text: 'Buku panduan energi terbarukan kaya teori tapi kurang interaktif', correct: false, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Kunjungan PLTU tidak mendorong inovasi atau pemahaman konsep', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Taman edukasi mini dengan mikrohidro, panel surya, biogas siswa belajar langsung dengan simulasi interaktif', correct: true, imageUrl: 'assets/option-c.jpg' }
+      ],
+      icon: '🏫'
+    },
+
+    // 15. Finish Level 3
+    { type: 'finish', content: 'Selamat! Level 3 Tuntas, kamu ahli energi terbarukan!', icon: '🏆' }
+  ]
 };
