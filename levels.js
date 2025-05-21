@@ -261,15 +261,6 @@ const levels = {
       icon: '🚌'
     },
 
-    // Info: Hybrid system
-    {
-      type: 'info',
-      content: 'Sistem hybrid mengandalkan baterai saat kendaraan tidak bergerak. Efisien dan ramah lingkungan.',
-      example: 'Hemat bahan bakar saat macet',
-      imageUrl: 'assets/info-hybrid.jpg',
-      icon: '🔋'
-    },
-
     // Quiz 4 (Correct answer -> moved to last)
     {
       type: 'quiz',
@@ -344,15 +335,6 @@ const levels = {
       icon: '🏬'
     },
 
-    // Info: Aplikasi Nyata
-    {
-      type: 'info',
-      content: 'Contoh nyata: Desa-desa di Indonesia sudah menggunakan mikrohidro dan biogas untuk penerangan dan memasak.',
-      example: 'Desa Pengalengan (mikrohidro), Desa Nglanggeran (biogas)',
-      imageUrl: 'assets/real-world.jpg',
-      icon: '🌍'
-    },
-
     // Quiz 9 (Correct -> 2nd)
     {
       type: 'quiz',
@@ -381,7 +363,9 @@ const levels = {
 
     // Finish Level 2
     { type: 'finish', content: 'Level 2 Tuntas! Siap melangkah ke energi terbarukan lanjutan?', icon: '🏆' }
-  ],      level3: [
+  ],      
+    
+    level3: [
     // 1. Start Level 3
     { type: 'start', content: 'Tantangan besar: integrasi energi & air bersih!', icon: '🏁' },
 
