@@ -16,7 +16,7 @@ const levels = {
     {
       type: 'quiz',
       question: 'Apa pengertian energi?',
-      imageUrl: 'assets/placeholder.jpg',
+      imageUrl: 'assets/3.jpg',
       options: [
         { text: 'Kemampuan untuk bergerak', correct: false, imageUrl: 'assets/placeholder.jpg' },
         { text: 'Kemampuan melakukan usaha', correct: true, imageUrl: 'assets/placeholder.jpg' },
@@ -38,15 +38,16 @@ const levels = {
       icon: '🔥'
     },
 
-    // 5. Quiz C3: Fotosintesis
+
+// 5. Quiz C3: Fotosintesis
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/3.jpg)\nGambar tersebut menunjukkan proses fotosintesis tanaman.',
+      question: 'Gambar tersebut menunjukkan proses fotosintesis tanaman.',
       imageUrl: 'assets/3.jpg',
       options: [
-        { text: 'Fotosintesis', correct: true, imageUrl: 'assets/placeholder.jpg' },
-        { text: 'Respirasi', correct: false, imageUrl: 'assets/placeholder.jpg' },
-        { text: 'Transpirasi', correct: false, imageUrl: 'assets/placeholder.jpg' }
+        { text: 'Fotosintesis', correct: true, imageUrl: 'assets/option-a.jpg' },
+        { text: 'Respirasi', correct: false, imageUrl: 'assets/option-b.jpg' },
+        { text: 'Transpirasi', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
       icon: '🌱'
     },
@@ -54,7 +55,8 @@ const levels = {
     // 6. Quiz NOMOR 3
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/matahari.jpg)\nGambar tersebut merupakan sumber energi untuk ...',
+      question: 'Gambar tersebut merupakan sumber energi untuk …',
+      imageUrl: 'assets/4.jpg',
       options: [
         { text: 'Menyimpan air di dalam tanah', correct: false },
         { text: 'Menghasilkan energi listrik dari angin', correct: false },
@@ -66,7 +68,8 @@ const levels = {
     // 7. Quiz NOMOR 4
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n!(assets/5.jpg)\nGambar tersebut merupakan sumber energi utama saat di ...',
+      question: 'Gambar tersebut merupakan sumber energi utama saat di …',
+      imageUrl: 'assets/5.jpg',
       options: [
         { text: 'Taman bermain', correct: false },
         { text: 'Rumah', correct: true },
@@ -78,11 +81,13 @@ const levels = {
     // 8. Quiz NOMOR 6
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/6.jpg)\nGambar tersebut menunjukkan bentuk energi yang dihasilkan, yaitu ...',
+      question: 'Gambar tersebut menunjukkan bentuk energi yang dihasilkan, yaitu …',
+      imageUrl: 'assets/6.jpg',
       options: [
         { text: 'Energi panas dan bunyi', correct: false },
         { text: 'Energi cahaya dan panas', correct: true },
         { text: 'Energi gerak dan cahaya', correct: false },
+        { text: 'Energi kimia dan gerak', correct: false }
       ],
       icon: '💡'
     },
@@ -90,7 +95,8 @@ const levels = {
     // 9. Quiz NOMOR 7
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/7.jpg)\n Dari gambar tersebut, bentuk energi yang dihasilkan adalah ...',
+      question: 'Dari gambar tersebut, bentuk energi yang dihasilkan adalah …',
+      imageUrl: 'assets/7.jpg',
       options: [
         { text: 'Energi cahaya', correct: false },
         { text: 'Energi panas', correct: false },
@@ -102,7 +108,8 @@ const levels = {
     // 10. Quiz NOMOR 8
     {
       type: 'quiz',
-      question: 'Perhatikan pernyataan-pernyataan di bawah ini!\n(i) Kompor gas\n(ii) Kipas angin\n(iii) Setrika listrik\n(iv) Lampu pijar\n(v) Blender\nDari pernyataan di atas, yang termasuk ke dalam energi panas adalah ...',
+      question: 'Dari pernyataan di atas, yang termasuk ke dalam energi panas adalah …',
+      imageUrl: 'assets/8.jpg',
       options: [
         { text: '(ii), (iii), dan (v)', correct: false },
         { text: '(i), (iii), dan (iv)', correct: true },
@@ -114,7 +121,8 @@ const levels = {
     // 11. Quiz NOMOR 9
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/9.jpg)\nEnergi yang tersimpan di dalam baterai merupakan contoh dari ...',
+      question: 'Energi yang tersimpan di dalam baterai merupakan contoh dari …',
+      imageUrl: 'assets/9.jpg',
       options: [
         { text: 'Energi panas', correct: false },
         { text: 'Energi kimia', correct: true },
@@ -126,7 +134,8 @@ const levels = {
     // 12. Quiz NOMOR 10
     {
       type: 'quiz',
-      question: 'Perhatikan gambar berikut!\n(assets/10.jpg)\nEnergi yang dihasilkan dari alat pada gambar tersebut adalah ...',
+      question: 'Energi yang dihasilkan dari alat pada gambar tersebut adalah …',
+      imageUrl: 'assets/10.jpg',
       options: [
         { text: 'Energi cahaya', correct: false },
         { text: 'Energi bunyi', correct: true },
@@ -140,7 +149,7 @@ const levels = {
       type: 'info',
       content: 'Energi memiliki berbagai bentuk: cahaya, gerak, panas, bunyi',
       example: 'Contoh: Lampu menghasilkan energi cahaya',
-      imageUrl: 'assets/placeholder.jpg',
+      imageUrl: 'assets/energy-forms.jpg',
       icon: '🌈'
     },
 
