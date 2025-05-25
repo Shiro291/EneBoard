@@ -16,60 +16,55 @@ let scores = [0, 0, 0, 0]; // Player scores
 let finishedPlayers = []; // Track finished players
 
 // Initialize game
-updateBoard();
-updateLeaderboard();
-
-// Event Listeners
-dice.addEventListener('click', rollDice);
-nextBtn.addEventListener('click', goToNextLevel);
-closeModalBtn.addEventListener('click', closeModal);
-
-function updateLeaderboard() {
-    leaderboardList.innerHTML = '';
-    players.forEach((_, playerIndex) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Pemain ${playerIndex + 1}: ${scores[playerIndex]} poin`;
-        leaderboardList.appendChild(listItem);
-    });
-}
-
-// Fisher-Yates shuffle algorithm for randomizing options
-function shuffleArray(array) {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+document.addEventListener('DOMContentLoaded', () => {
+    updateBoard();
+    updateLeaderboard();
+    
+    // Event Listeners
+    dice.addEventListener('click', rollDice);
+    nextBtn.addEventListener('click', goToNextLevel);
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    // Debug functionality
+    const startTile = document.querySelector('.tile[data-type="start"]');
+    if (startTile) {
+        startTile.addEventListener('dblclick', () => {
+            const debugPanel = document.getElementById('debug-panel');
+            debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
+        });
     }
-    return newArray;
+});
+
+// Update Leaderboard
+function updateLeaderboard() {
+    if (leaderboardList) {
+        leaderboardList.innerHTML = '';
+        players.forEach((_, playerIndex) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Pemain ${playerIndex + 1}: ${scores[playerIndex]} poin`;
+            leaderboardList.appendChild(listItem);
+        });
+    }
 }
 
+// Show Modal
 function showModal(title, text, options = [], imageUrl = '') {
-    // Add image if provided
     let modalContent = '';
     if (imageUrl) {
         modalContent += `<img src="${imageUrl}" class="modal-image">`;
     }
-    
-    // Add text content
     modalContent += text;
     
     modalTitle.textContent = title;
     modalText.innerHTML = modalContent;
-    
-    // Clear previous options
     optionsContainer.innerHTML = '';
     
-    // Randomize options
-    const randomizedOptions = shuffleArray(options);
-    
-    // Add options with optional images
-    randomizedOptions.forEach(option => {
+    options.forEach(option => {
         const button = document.createElement('button');
         button.className = "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full mt-2";
-        button.innerHTML = `
-            ${option.imageUrl ? `<img src="${option.imageUrl}" class="inline mr-2 modal-option-image">` : ''}
-            ${option.text}
-        `;
+        button.innerHTML = option.imageUrl ? 
+            `<img src="${option.imageUrl}" class="inline mr-2 modal-option-image">${option.text}` : 
+            option.text;
         button.onclick = () => {
             eval(option.action);
             closeModal();
@@ -80,11 +75,13 @@ function showModal(title, text, options = [], imageUrl = '') {
     document.getElementById('question-modal').classList.remove('hidden');
 }
 
+// Close Modal
 function closeModal() {
     document.getElementById('question-modal').classList.add('hidden');
     optionsContainer.innerHTML = '';
 }
 
+// Handle Tile Interaction
 function checkTile(tileIndex, playerIndex) {
     const currentLevelData = levels[`level${currentLevel}`][tileIndex];
     
@@ -99,16 +96,6 @@ function checkTile(tileIndex, playerIndex) {
                     imageUrl: option.imageUrl || ''
                 })),
                 currentLevelData.imageUrl || ''
-            );
-            break;
-        case 'challenge':
-            showModal(
-                'Challenge!', 
-                currentLevelData.task, 
-                [{
-                    text: 'Submit', 
-                    action: `validateChallenge(${playerIndex})`
-                }]
             );
             break;
         case 'info':
@@ -126,16 +113,13 @@ function checkTile(tileIndex, playerIndex) {
             if (!finishedPlayers.includes(playerIndex)) {
                 finishedPlayers.push(playerIndex);
                 showFinishMessage(playerIndex);
-                
-                // Show next level button if at least one player finishes
-                if (finishedPlayers.length >= 1) {
-                    nextBtn.classList.remove('hidden');
-                }
+                if (finishedPlayers.length >= 1) nextBtn.classList.remove('hidden');
             }
             break;
     }
 }
 
+// Handle Answer
 function checkAnswer(isCorrect, playerIndex) {
     if (isCorrect) {
         scores[playerIndex] += 10;
@@ -145,12 +129,7 @@ function checkAnswer(isCorrect, playerIndex) {
     }
 }
 
-function validateChallenge(playerIndex) {
-    // Simulate correct answer
-    scores[playerIndex] += 20;
-    updateLeaderboard();
-}
-
+// Move Player
 function rollDice() {
     const steps = Math.floor(Math.random() * 3) + 1;
     movePlayer(currentPlayer, steps);
@@ -161,67 +140,51 @@ function rollDice() {
         nextBtn.classList.remove('hidden');
     }
     
-    // Move to next player
     let nextPlayer = (currentPlayer + 1) % players.length;
-    
-    // Skip finished players
-    while (finishedPlayers.includes(nextPlayer) && nextPlayer < players.length) {
+    while (finishedPlayers.includes(nextPlayer)) {
         nextPlayer = (nextPlayer + 1) % players.length;
     }
-    
     currentPlayer = nextPlayer;
     updateCurrentPlayer();
 }
 
+// Update Current Player Display
 function updateCurrentPlayer() {
-    currentPlayerDisplay.textContent = `Giliran: Pemain ${currentPlayer + 1}`;
+    if (currentPlayerDisplay) {
+        currentPlayerDisplay.textContent = `Giliran: Pemain ${currentPlayer + 1}`;
+    }
 }
 
+// Move Player Logic
 function movePlayer(playerIndex, steps) {
     players[playerIndex] += steps;
     const maxTileIndex = levels[`level${currentLevel}`].length - 1;
-    
-    if (players[playerIndex] > maxTileIndex) {
-        players[playerIndex] = maxTileIndex;
-    }
-    
+    if (players[playerIndex] > maxTileIndex) players[playerIndex] = maxTileIndex;
     updateBoard();
     checkTile(players[playerIndex], playerIndex);
 }
 
+// Draw Game Board
 function updateBoard() {
     const currentLevelData = levels[`level${currentLevel}`];
     board.innerHTML = '';
     
-    // Player colors
     const playerColors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500'];
     
     currentLevelData.forEach((tile, index) => {
         const tileElement = document.createElement('div');
         tileElement.className = `tile flex flex-col items-center justify-center text-center p-4 rounded-lg border-2 ${getTileColor(tile.type)}`;
-        tileElement.dataset.type = tile.type; // Mark tile type
-        
-        // Add tile icon and number
         tileElement.innerHTML = `
             <div class="text-3xl mb-2">${tile.icon || ''}</div>
             <div class="text-xs mt-auto">${index + 1}</div>
         `;
         
-        // Add double-click event to start tiles
-        if (tile.type === 'start') {
-            tileElement.addEventListener('dblclick', () => {
-                toggleDebugPanel();
-            });
-        }
-        
-        // Add player indicators in fixed corners
         players.forEach((position, playerIndex) => {
             if (position === index) {
                 const playerIndicator = document.createElement('div');
                 playerIndicator.className = `player-indicator ${playerColors[playerIndex % playerColors.length]} absolute font-bold text-white flex items-center justify-center`;
                 playerIndicator.textContent = playerIndex + 1;
                 
-                // Position based on player index
                 switch(playerIndex) {
                     case 0: // Top-left
                         playerIndicator.style.top = '2px';
@@ -241,19 +204,22 @@ function updateBoard() {
                         break;
                 }
                 
-                // Style the indicator
                 playerIndicator.style.width = '20px';
                 playerIndicator.style.height = '20px';
                 playerIndicator.style.borderRadius = '50%';
-                
                 tileElement.appendChild(playerIndicator);
             }
+        });
+        
+        tileElement.addEventListener('dblclick', () => {
+            if (tile.type === 'start') toggleDebugPanel();
         });
         
         board.appendChild(tileElement);
     });
 }
 
+// Get Tile Color
 function getTileColor(type) {
     return {
         start: 'bg-green-200 border-green-500',
@@ -265,10 +231,12 @@ function getTileColor(type) {
     }[type] || 'bg-gray-200 border-gray-400';
 }
 
+// Finish Message
 function showFinishMessage(playerIndex) {
     alert(`Pemain ${playerIndex + 1} menyelesaikan level ${currentLevel}!`);
 }
 
+// Go to Next Level
 function goToNextLevel() {
     if (currentLevel < 3) {
         currentLevel++;
@@ -280,5 +248,34 @@ function goToNextLevel() {
         updateBoard();
         updateLeaderboard();
         document.getElementById('current-level').textContent = currentLevel;
+    }
+}
+
+// Utility Functions
+function toggleDebugPanel() {
+    const panel = document.getElementById('debug-panel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+}
+
+function setDebugLevel() {
+    const input = document.getElementById('debug-level');
+    const newLevel = parseInt(input.value);
+    if (newLevel >= 1 && newLevel <= 3) {
+        currentLevel = newLevel;
+        players = [0, 0, 0, 0];
+        finishedPlayers = [];
+        currentPlayer = 0;
+        updateBoard();
+        updateLeaderboard();
+        document.getElementById('current-level').textContent = currentLevel;
+    }
+}
+
+function addDebugScore() {
+    const input = document.getElementById('debug-score');
+    const score = parseInt(input.value);
+    if (!isNaN(score)) {
+        scores[currentPlayer] += score;
+        updateLeaderboard();
     }
 }
