@@ -199,12 +199,20 @@ function updateBoard() {
     currentLevelData.forEach((tile, index) => {
         const tileElement = document.createElement('div');
         tileElement.className = `tile flex flex-col items-center justify-center text-center p-4 rounded-lg border-2 ${getTileColor(tile.type)}`;
+        tileElement.dataset.type = tile.type; // Mark tile type
         
         // Add tile icon and number
         tileElement.innerHTML = `
             <div class="text-3xl mb-2">${tile.icon || ''}</div>
             <div class="text-xs mt-auto">${index + 1}</div>
         `;
+        
+        // Add double-click event to start tiles
+        if (tile.type === 'start') {
+            tileElement.addEventListener('dblclick', () => {
+                toggleDebugPanel();
+            });
+        }
         
         // Add player indicators in fixed corners
         players.forEach((position, playerIndex) => {
