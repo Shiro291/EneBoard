@@ -57,19 +57,11 @@
             </button>
 
             <!-- Debug Controls -->
-            <button onclick="toggleDebugPanel()" class="mt-4 bg-purple-500 text-white px-4 py-2 rounded-lg">
-                🔍 Debug Mode
-            </button>
             <div id="debug-panel">
                 <label for="debug-level">Level:</label>
                 <input type="number" id="debug-level" min="1" max="3" placeholder="1-3" class="w-full mt-1 p-1">
                 <button onclick="setDebugLevel()" class="mt-2 bg-yellow-500 text-white px-4 py-1 w-full">
                     Set Level
-                </button>
-                <label for="debug-player" class="mt-4">Force Player Turn:</label>
-                <input type="number" id="debug-player" min="0" max="3" placeholder="0-3" class="w-full mt-1 p-1">
-                <button onclick="forcePlayerTurn()" class="mt-2 bg-yellow-500 text-white px-4 py-1 w-full">
-                    Set Player
                 </button>
                 <label for="debug-score" class="mt-4">Add Score:</label>
                 <input type="number" id="debug-score" min="0" class="w-full mt-1 p-1">
@@ -106,36 +98,37 @@
     <script src="levels.js"></script>
     <script src="game.js"></script>
     <script>
-        function toggleDebugPanel() {
-            const panel = document.getElementById('debug-panel');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-        }
+        // Toggle debug panel on start tile double-click
+        document.addEventListener('DOMContentLoaded', () => {
+            const startTile = document.querySelector('.tile[data-type="start"]');
+            startTile.addEventListener('dblclick', () => {
+                const debugPanel = document.getElementById('debug-panel');
+                debugPanel.style.display = debugPanel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
 
         function setDebugLevel() {
             const input = document.getElementById('debug-level');
-            const level = parseInt(input.value);
-            if (!isNaN(level) && level >= 1 && level <= 3) {
-                window.levels.currentLevel = level;
+            const newLevel = parseInt(input.value);
+            
+            if (!isNaN(newLevel) && newLevel >= 1 && newLevel <= 3) {
+                currentLevel = newLevel;
+                players = [0, 0, 0, 0];
+                finishedPlayers = [];
+                currentPlayer = 0;
                 updateBoard();
                 updateLeaderboard();
-                document.getElementById('current-level').textContent = level;
-            }
-        }
-
-        function forcePlayerTurn() {
-            const input = document.getElementById('debug-player');
-            const player = parseInt(input.value);
-            if (!isNaN(player) && player >= 0 && player <= 3) {
-                window.levels.currentPlayer = player;
-                updateCurrentPlayer();
+                document.getElementById('current-level').textContent = currentLevel;
+                nextBtn.classList.add('hidden');
             }
         }
 
         function addDebugScore() {
             const input = document.getElementById('debug-score');
             const score = parseInt(input.value);
+            
             if (!isNaN(score)) {
-                window.levels.scores[window.levels.currentPlayer] += score;
+                scores[currentPlayer] += score;
                 updateLeaderboard();
             }
         }
