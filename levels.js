@@ -158,7 +158,6 @@ const levels = {
       icon: '🏆'
     }
   ],
-    ],
    level2: [
     { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
 
