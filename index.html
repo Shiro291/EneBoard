@@ -107,6 +107,11 @@
             });
         });
 
+        function toggleDebugPanel() {
+            const panel = document.getElementById('debug-panel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        }
+
         function setDebugLevel() {
             const input = document.getElementById('debug-level');
             const newLevel = parseInt(input.value);
@@ -122,7 +127,6 @@
                 nextBtn.classList.add('hidden');
             }
         }
-
         function addDebugScore() {
             const input = document.getElementById('debug-score');
             const score = parseInt(input.value);
@@ -133,11 +137,5 @@
             }
         }
     </script>
-    <script>
-    function toggleDebugPanel() {
-        const panel = document.getElementById('debug-panel');
-        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-    }
-</script>
 </body>
 </html>
