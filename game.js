@@ -24,31 +24,6 @@ dice.addEventListener('click', rollDice);
 nextBtn.addEventListener('click', goToNextLevel);
 closeModalBtn.addEventListener('click', closeModal);
 
-// Add debug button functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Add keyboard shortcut for testing (press 1/2/3)
-    document.addEventListener('keydown', (e) => {
-        if (e.key >= '1' && e.key <= '3') {
-            setDebugLevel(parseInt(e.key));
-        }
-    });
-});
-
-function setDebugLevel(level) {
-    const newLevel = typeof level === 'number' ? level : parseInt(document.getElementById('debug-level').value);
-    
-    if (isNaN(newLevel) || newLevel < 1 || newLevel > 3) return;
-    
-    currentLevel = newLevel;
-    players = [0, 0, 0, 0];
-    currentPlayer = 0;
-    finishedPlayers = [];
-    updateBoard();
-    updateLeaderboard();
-    document.getElementById('current-level').textContent = currentLevel;
-    nextBtn.classList.add('hidden');
-}
-
 function updateLeaderboard() {
     leaderboardList.innerHTML = '';
     players.forEach((_, playerIndex) => {
@@ -262,6 +237,7 @@ function updateBoard() {
                 playerIndicator.style.width = '20px';
                 playerIndicator.style.height = '20px';
                 playerIndicator.style.borderRadius = '50%';
+                
                 tileElement.appendChild(playerIndicator);
             }
         });
