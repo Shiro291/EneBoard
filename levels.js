@@ -16,7 +16,7 @@ const levels = {
     {
       type: 'quiz',
       question: 'Apa pengertian energi?',
-      imageUrl: 'assets/3.jpg',
+      imageUrl: 'assets/placeholder.jpg',
       options: [
         { text: 'Kemampuan untuk bergerak', correct: false, imageUrl: 'assets/placeholder.jpg' },
         { text: 'Kemampuan melakukan usaha', correct: true, imageUrl: 'assets/placeholder.jpg' },
