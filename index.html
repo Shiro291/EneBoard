@@ -1,141 +1,143 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Phintar Energi Adventure</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        .tile {
-            min-height: 120px;
-            position: relative;
-        }
-        .player-indicator {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
-        /* Player positions */
-        .player-1 { top: 4px; left: 4px; }
-        .player-2 { top: 4px; right: 4px; }
-        .player-3 { bottom: 4px; right: 4px; }
-        .player-4 { bottom: 4px; left: 4px; }
-        
-        /* Modal image styling */
-        .modal-image {
-            max-width: 500px;
-            max-height: 500px;
-            margin-bottom: 1rem;
-        }
+  <meta charset="UTF-8" />
+  <title>Phintar Energi Adventure</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    .tile {
+      min-height: 120px;
+      position: relative;
+    }
+    .player-indicator {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+    }
+    .player-1 { top: 4px; left: 4px; }
+    .player-2 { top: 4px; right: 4px; }
+    .player-3 { bottom: 4px; right: 4px; }
+    .player-4 { bottom: 4px; left: 4px; }
 
-        /* Debug Panel Styles */
-        #debug-panel {
-            display: none;
-            background: #f1f1f1;
-            padding: 1rem;
-            border: 1px solid #ccc;
-            margin-top: 1rem;
-        }
-    </style>
+    .modal-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    #debug-panel {
+      display: none;
+      background: #f1f1f1;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+    }
+
+    .modal-content {
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <div class="game-container flex flex-col md:flex-row max-w-6xl mx-auto p-4 gap-6">
-        <!-- Sidebar -->
-<div class="sidebar bg-white shadow-md rounded-lg p-4 flex flex-col items-center md:w-1/4">
-    <h1 class="text-2xl font-bold mb-6">Level: <span id="current-level" class="text-blue-500">1</span></h1>
-    <h2 id="current-player" class="text-lg font-semibold text-gray-700 mb-6">Giliran: Pemain 1</h2>
-    <button id="dice" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition flex items-center justify-center gap-2 mb-6">
+  <div class="game-container flex flex-col md:flex-row max-w-6xl mx-auto p-4 gap-6">
+    <!-- Sidebar -->
+    <div class="sidebar bg-white shadow-md rounded-lg p-4 flex flex-col items-center md:w-1/4">
+      <h1 class="text-2xl font-bold mb-6">Level: <span id="current-level" class="text-blue-500">1</span></h1>
+      <h2 id="current-player" class="text-lg font-semibold text-gray-700 mb-6">Giliran: Pemain 1</h2>
+      <button id="dice" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600 transition flex items-center justify-center gap-2 mb-6">
         🎲 Lemparkan Dadu
-    </button>
-    <button id="next-level" class="hidden bg-green-500 text-white px-6 py-3 rounded-lg shadow hover:bg-green-600 transition fixed bottom-8 right-8 z-10">
+      </button>
+      <button id="next-level" class="hidden bg-green-500 text-white px-6 py-3 rounded-lg shadow hover:bg-green-600 transition fixed bottom-8 right-8 z-10">
         Lanjut ke Level Selanjutnya
-    </button>
+      </button>
 
-    <!-- Debug Panel -->
-    <div id="debug-panel" class="mt-4">
+      <!-- Debug Panel -->
+      <div id="debug-panel" class="mt-4">
         <label for="debug-level">Level:</label>
-        <input type="number" id="debug-level" min="1" max="3" placeholder="1-3" class="w-full mt-1 p-1">
+        <input type="number" id="debug-level" min="1" max="3" placeholder="1-3" class="w-full mt-1 p-1" />
         <button onclick="setDebugLevel()" class="mt-2 bg-yellow-500 text-white px-4 py-1 w-full">
-            Set Level
+          Set Level
         </button>
         <label for="debug-score" class="mt-4">Add Score:</label>
-        <input type="number" id="debug-score" min="0" class="w-full mt-1 p-1">
+        <input type="number" id="debug-score" min="0" class="w-full mt-1 p-1" />
         <button onclick="addDebugScore()" class="mt-2 bg-yellow-500 text-white px-4 py-1 w-full">
-            Add Score
+          Add Score
         </button>
-    </div>
-</div>
-        
-        <!-- Game Board -->
-        <div class="flex-1">
-            <div id="board" class="grid grid-cols-5 gap-4 p-4 bg-white shadow-md rounded-lg"></div>
-        </div>
-        
-        <!-- Leaderboard -->
-        <div class="leaderboard bg-white shadow-md rounded-lg p-4 flex flex-col items-center md:w-1/4">
-            <h2 class="text-xl font-bold mb-4">Leaderboard</h2>
-            <ul id="leaderboard-list" class="list-disc text-left w-full pl-4 space-y-2"></ul>
-        </div>
+      </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden z-50" id="question-modal">
-        <div class="modal-content bg-white rounded-lg shadow-lg p-6 w-full max-w-md animate-fade-in">
-            <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
-            <div id="modal-text" class="mb-6 prose max-h-60 overflow-y-auto"></div>
-            <div id="options-container" class="space-y-2"></div>
-            <button id="close-modal" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-600 transition w-full">
-                Tutup
-            </button>
-        </div>
+    <!-- Game Board -->
+    <div class="flex-1">
+      <div id="board" class="grid grid-cols-5 gap-4 p-4 bg-white shadow-md rounded-lg"></div>
     </div>
 
-    <script src="levels.js"></script>
-    <script src="game.js"></script>
-    <script>
-        // Toggle debug panel on start tile double-click
-        document.addEventListener('DOMContentLoaded', () => {
-            const startTile = document.querySelector('.tile[data-type="start"]');
-            startTile.addEventListener('dblclick', () => {
-                const debugPanel = document.getElementById('debug-panel');
-                debugPanel.style.display = debugPanel.style.display === 'block' ? 'none' : 'block';
-            });
+    <!-- Leaderboard -->
+    <div class="leaderboard bg-white shadow-md rounded-lg p-4 flex flex-col items-center md:w-1/4">
+      <h2 class="text-xl font-bold mb-4">Leaderboard</h2>
+      <ul id="leaderboard-list" class="list-disc text-left w-full pl-4 space-y-2"></ul>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden z-50" id="question-modal">
+    <div class="modal-content bg-white rounded-lg shadow-lg p-6 w-full max-w-md animate-fade-in">
+      <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
+      <div id="modal-text" class="mb-6 prose max-h-60 overflow-y-auto px-2"></div>
+      <div id="options-container" class="space-y-2"></div>
+      <button id="close-modal" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-600 transition w-full">
+        Tutup
+      </button>
+    </div>
+  </div>
+
+  <script src="levels.js"></script>
+  <script src="game.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startTile = document.querySelector('.tile[data-type=\"start\"]');
+      if (startTile) {
+        startTile.addEventListener('dblclick', () => {
+          const debugPanel = document.getElementById('debug-panel');
+          debugPanel.style.display = debugPanel.style.display === 'block' ? 'none' : 'block';
         });
+      }
+    });
 
-        function toggleDebugPanel() {
-            const panel = document.getElementById('debug-panel');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-        }
+    function toggleDebugPanel() {
+      const panel = document.getElementById('debug-panel');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
 
-        function setDebugLevel() {
-            const input = document.getElementById('debug-level');
-            const newLevel = parseInt(input.value);
-            
-            if (!isNaN(newLevel) && newLevel >= 1 && newLevel <= 3) {
-                currentLevel = newLevel;
-                players = [0, 0, 0, 0];
-                finishedPlayers = [];
-                currentPlayer = 0;
-                updateBoard();
-                updateLeaderboard();
-                document.getElementById('current-level').textContent = currentLevel;
-                nextBtn.classList.add('hidden');
-            }
-        }
-        function addDebugScore() {
-            const input = document.getElementById('debug-score');
-            const score = parseInt(input.value);
-            
-            if (!isNaN(score)) {
-                scores[currentPlayer] += score;
-                updateLeaderboard();
-            }
-        }
-    </script>
+    function setDebugLevel() {
+      const input = document.getElementById('debug-level');
+      const newLevel = parseInt(input.value);
+      if (!isNaN(newLevel) && newLevel >= 1 && newLevel <= 3) {
+        currentLevel = newLevel;
+        players = [0, 0, 0, 0];
+        finishedPlayers = [];
+        currentPlayer = 0;
+        updateBoard();
+        updateLeaderboard();
+        document.getElementById('current-level').textContent = currentLevel;
+        nextBtn.classList.add('hidden');
+      }
+    }
+
+    function addDebugScore() {
+      const input = document.getElementById('debug-score');
+      const score = parseInt(input.value);
+      if (!isNaN(score)) {
+        scores[currentPlayer] += score;
+        updateLeaderboard();
+      }
+    }
+  </script>
 </body>
 </html>
