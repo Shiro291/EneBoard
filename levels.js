@@ -1,211 +1,163 @@
 const levels = {
     level1: [
         // 1. Start
-        { type: 'start', content: 'Selamat datang di dunia energi!', icon: '🏁' },
-        // 2. Info: Pengertian Energi
-        { 
-            type: 'info', 
-            content: 'Energi adalah kemampuan untuk melakukan usaha atau aktivitas', 
-            example: 'Contoh: Lampu menyala menggunakan energi listrik',
-            imageUrl: 'assets/energy-definition.jpg', // Placeholder image
-            icon: '⚡'
-        },
-        // 3. Quiz C1: Pengertian Energi
-        { 
-            type: 'quiz', 
-            question: 'Apa pengertian energi?',
-            imageUrl: 'assets/question-1.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Kemampuan untuk bergerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg' // Placeholder image
-                },
-                { 
-                    text: 'Kemampuan melakukan usaha', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Benda yang menghasilkan panas', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '💡'
-        },
-        // 4. Info: Sumber Energi Tak Terbarukan
-        { 
-            type: 'info', 
-            content: 'Sumber energi terbagi menjadi terbarukan dan tak terbarukan',
-            example: 'Matahari termasuk energi terbarukan',
-            imageUrl: 'assets/non-renewable-sources.jpg', // Placeholder image
-            icon: '☀️'
-        },
-        // 5. Quiz C2: Sumber Energi Tak Terbarukan
-        { 
-            type: 'quiz', 
-            question: 'Manakah sumber energi tak terbarukan?',
-            imageUrl: 'assets/question-2.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Matahari', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Batu bara', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Angin', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🔥'
-        },
-        // 6. Reward: +10 Poin
-        { 
-            type: 'reward', 
-            content: '+10 Poin! 🌟 Pahami sumber energi dengan baik!',
-            icon: '⭐'
-        },
-        // 7. Info: Fotosintesis
-        { 
-            type: 'info', 
-            content: 'Tumbuhan memanfaatkan energi matahari untuk fotosintesis',
-            example: 'Proses membuat makanan dari cahaya',
-            imageUrl: 'assets/photosynthesis.jpg', // Placeholder image
-            icon: '🌱'
-        },
-        // 8. Quiz C3: Sumber Energi Fotosintesis
-        { 
-            type: 'quiz', 
-            question: 'Sumber energi utama untuk fotosintesis adalah...',
-            imageUrl: 'assets/question-3.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Matahari', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Baterai', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🌻'
-        },
-        // 9. Info: Energi Listrik Rumah
-        { 
-            type: 'info', 
-            content: 'Listrik adalah energi yang paling sering digunakan di rumah',
-            example: 'Contoh: TV, Kulkas, Lampu',
-            imageUrl: 'assets/home-electricity.jpg', // Placeholder image
-            icon: '🔌'
-        },
-        // 10. Quiz C4: Sumber Energi Rumah
-        { 
-            type: 'quiz', 
-            question: 'Contoh sumber energi di rumah adalah...',
-            imageUrl: 'assets/question-4.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Angin', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Listrik', 
-                    correct: true,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Minyak bumi', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '🏠'
-        },
-        // 11. Info: Benda Bukan Sumber Energi
-        { 
-            type: 'info', 
-            content: 'Benda mati tidak bisa menghasilkan energi sendiri',
-            example: 'Contoh: Batu, Kursi, Buku',
-            imageUrl: 'assets/non-energy-objects.jpg', // Placeholder image
-            icon: '📚'
-        },
-        // 12. Quiz C5: Bukan Sumber Energi
-        { 
-            type: 'quiz', 
-            question: 'Manakah yang BUKAN sumber energi?',
-            imageUrl: 'assets/question-5.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Matahari', 
-                    correct: false,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Baterai', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Batu', 
-                    correct: true,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '❌'
-        },
-        // 13. Info: Bentuk Energi
-        { 
-            type: 'info', 
-            content: 'Energi memiliki berbagai bentuk: cahaya, gerak, panas, bunyi',
-            example: 'Lampu menghasilkan energi cahaya',
-            imageUrl: 'assets/energy-forms.jpg', // Placeholder image
-            icon: '🌈'
-        },
-        // 14. Quiz C6: Bentuk Energi Lampu
-        { 
-            type: 'quiz', 
-            question: 'Bentuk energi yang dihasilkan lampu adalah...',
-            imageUrl: 'assets/question-6.jpg', // Placeholder image
-            options: [
-                { 
-                    text: 'Cahaya', 
-                    correct: true,
-                    imageUrl: 'assets/option-a.jpg'
-                },
-                { 
-                    text: 'Gerak', 
-                    correct: false,
-                    imageUrl: 'assets/option-b.jpg'
-                },
-                { 
-                    text: 'Panas', 
-                    correct: false,
-                    imageUrl: 'assets/option-c.jpg'
-                }
-            ],
-            icon: '💡'
-        },
-        // 15. Finish Level 1
-        { 
-            type: 'finish', 
-            content: 'Level 1 Selesai! Lanjut ke transformasi energi!',
-            icon: '🏆'
-        }
+    { type: 'start', content: 'Selamat datang di dunia energi!', icon: '🏁' },
+
+    // 2. Info: Pengertian Energi
+    {
+      type: 'info',
+      content: 'Energi adalah kemampuan untuk melakukan usaha atau aktivitas',
+      example: 'Contoh: Lampu menyala menggunakan energi listrik',
+      imageUrl: 'assets/placeholder.jpg',
+      icon: '⚡'
+    },
+
+    // 3. Quiz C1: Pengertian Energi
+    {
+      type: 'quiz',
+      question: 'Apa pengertian energi?',
+      imageUrl: 'assets/placeholder.jpg',
+      options: [
+        { text: 'Kemampuan untuk bergerak', correct: false, imageUrl: 'assets/placeholder.jpg' },
+        { text: 'Kemampuan melakukan usaha', correct: true, imageUrl: 'assets/placeholder.jpg' },
+        { text: 'Benda yang menghasilkan panas', correct: false, imageUrl: 'assets/placeholder.jpg' }
+      ],
+      icon: '💡'
+    },
+
+    // 4. Quiz C2: Sumber Energi Tak Terbarukan
+    {
+      type: 'quiz',
+      question: 'Manakah sumber energi tak terbarukan?',
+      imageUrl: 'assets/placeholder.jpg',
+      options: [
+        { text: 'Matahari', correct: false, imageUrl: 'assets/2A.jpg' },
+        { text: 'Batu bara', correct: true, imageUrl: 'assets/2B.jpg' },
+        { text: 'Angin', correct: false, imageUrl: 'assets/2C.jpg' }
+      ],
+      icon: '🔥'
+    },
+
+    // 5. Quiz C3: Fotosintesis
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/3.jpg)\nGambar tersebut menunjukkan proses fotosintesis tanaman.',
+      imageUrl: 'assets/3.jpg',
+      options: [
+        { text: 'Fotosintesis', correct: true, imageUrl: 'assets/placeholder.jpg' },
+        { text: 'Respirasi', correct: false, imageUrl: 'assets/placeholder.jpg' },
+        { text: 'Transpirasi', correct: false, imageUrl: 'assets/placeholder.jpg' }
+      ],
+      icon: '🌱'
+    },
+
+    // 6. Quiz NOMOR 3
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/matahari.jpg)\nGambar tersebut merupakan sumber energi untuk ...',
+      options: [
+        { text: 'Menyimpan air di dalam tanah', correct: false },
+        { text: 'Menghasilkan energi listrik dari angin', correct: false },
+        { text: 'Fotosintesis tanaman', correct: true }
+      ],
+      icon: '🌞'
+    },
+
+    // 7. Quiz NOMOR 4
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n!(assets/5.jpg)\nGambar tersebut merupakan sumber energi utama saat di ...',
+      options: [
+        { text: 'Taman bermain', correct: false },
+        { text: 'Rumah', correct: true },
+        { text: 'Ladang pertanian', correct: false }
+      ],
+      icon: '🔌'
+    },
+
+    // 8. Quiz NOMOR 6
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/6.jpg)\nGambar tersebut menunjukkan bentuk energi yang dihasilkan, yaitu ...',
+      options: [
+        { text: 'Energi panas dan bunyi', correct: false },
+        { text: 'Energi cahaya dan panas', correct: true },
+        { text: 'Energi gerak dan cahaya', correct: false },
+      ],
+      icon: '💡'
+    },
+
+    // 9. Quiz NOMOR 7
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/7.jpg)\n Dari gambar tersebut, bentuk energi yang dihasilkan adalah ...',
+      options: [
+        { text: 'Energi cahaya', correct: false },
+        { text: 'Energi panas', correct: false },
+        { text: 'Energi gerak', correct: true }
+      ],
+      icon: '🌀'
+    },
+
+    // 10. Quiz NOMOR 8
+    {
+      type: 'quiz',
+      question: 'Perhatikan pernyataan-pernyataan di bawah ini!\n(i) Kompor gas\n(ii) Kipas angin\n(iii) Setrika listrik\n(iv) Lampu pijar\n(v) Blender\nDari pernyataan di atas, yang termasuk ke dalam energi panas adalah ...',
+      options: [
+        { text: '(ii), (iii), dan (v)', correct: false },
+        { text: '(i), (iii), dan (iv)', correct: true },
+        { text: '(i), (ii), dan (v)', correct: false }
+      ],
+      icon: '🔥'
+    },
+
+    // 11. Quiz NOMOR 9
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/9.jpg)\nEnergi yang tersimpan di dalam baterai merupakan contoh dari ...',
+      options: [
+        { text: 'Energi panas', correct: false },
+        { text: 'Energi kimia', correct: true },
+        { text: 'Energi gerak', correct: false }
+      ],
+      icon: '🔋'
+    },
+
+    // 12. Quiz NOMOR 10
+    {
+      type: 'quiz',
+      question: 'Perhatikan gambar berikut!\n(assets/10.jpg)\nEnergi yang dihasilkan dari alat pada gambar tersebut adalah ...',
+      options: [
+        { text: 'Energi cahaya', correct: false },
+        { text: 'Energi bunyi', correct: true },
+        { text: 'Energi panas', correct: false }
+      ],
+      icon: '🔊'
+    },
+
+    // 13. Info: Bentuk Energi
+    {
+      type: 'info',
+      content: 'Energi memiliki berbagai bentuk: cahaya, gerak, panas, bunyi',
+      example: 'Contoh: Lampu menghasilkan energi cahaya',
+      imageUrl: 'assets/placeholder.jpg',
+      icon: '🌈'
+    },
+
+    // 14. Reward: +10 Poin
+    {
+      type: 'reward',
+      content: '+10 Poin! 🌟 Kerja bagus, kamu memahami energi dengan baik!',
+      icon: '⭐'
+    },
+
+    // 15. Finish Level 1
+    {
+      type: 'finish',
+      content: 'Level 1 Selesai! Lanjut ke transformasi energi!',
+      icon: '🏆'
+    }
+  ],
     ],
    level2: [
     { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
