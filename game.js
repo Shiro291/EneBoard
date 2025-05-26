@@ -10,6 +10,16 @@ const modalText = document.getElementById('modal-text');
 const optionsContainer = document.getElementById('options-container');
 const closeModalBtn = document.getElementById('close-modal');
 
+// ── Shuffle helper ──────────────────────────────────────────
+function shuffleArray(array) {
+  const a = array.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 let players = [0, 0, 0, 0]; // Player positions
 let currentPlayer = 0;
 let scores = [0, 0, 0, 0]; // Player scores
@@ -59,8 +69,9 @@ function showModal(title, text, options = [], imageUrl = '') {
     modalText.innerHTML = modalContent;
     optionsContainer.innerHTML = '';
     
-    options.forEach(option => {
-        const button = document.createElement('button');
+    const shuffled = shuffleArray(options);
+shuffled.forEach(option => {
+  const button = document.createElement('button');
         button.className = "bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition w-full mt-2";
         button.innerHTML = option.imageUrl ? 
             `<img src="${option.imageUrl}" class="inline mr-2 modal-option-image">${option.text}` : 
