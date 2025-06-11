@@ -18,9 +18,9 @@ const levels = {
       question: 'Apa pengertian energi?',
       imageUrl: 'assets/placeholder.jpg',
       options: [
-        { text: 'Kemampuan untuk bergerak', correct: false, imageUrl: 'assets/placeholder.jpg' },
-        { text: 'Kemampuan melakukan usaha', correct: true, imageUrl: 'assets/placeholder.jpg' },
-        { text: 'Benda yang menghasilkan panas', correct: false, imageUrl: 'assets/placeholder.jpg' }
+        { text: 'Kemampuan untuk bergerak', correct: false },
+        { text: 'Kemampuan melakukan usaha', correct: true},
+        { text: 'Benda yang menghasilkan panas', correct: false}
       ],
       icon: '💡'
     },
