@@ -27,14 +27,7 @@ options: [
 
     // 4. Quiz C2: Sumber Energi Tak Terbarukan
     {
-      type: 'quiz',
-      question: 'Manakah sumber energi tak terbarukan?',
-      imageUrl: 'assets/placeholder.jpg',
-      options: [
-        { text: 'Matahari', correct: false, imageUrl: 'assets/2A.jpg' },
-        { text: 'Batu bara', correct: true, imageUrl: 'assets/2B.jpg' },
-        { text: 'Angin', correct: false, imageUrl: 'assets/2C.jpg' }
-      ],
+     type: 'quiz', question: 'Perhatikan daftar berikut ini: 1.	Matahari 2.	Batu bara 3.	Angin 4.	Minyak bumi 5.	Air Manakah yang termasuk sumber energi tak terbarukan? ',  options: [   {    text: '1, 3, dan 5',    correct: false,  },   {    text: '2 dan 4',    correct: false,  },   {    text: '1 dan 2',    correct: true,  } ],
       icon: '🔥'
     },
 
@@ -42,13 +35,15 @@ options: [
 // 5. Quiz C3: Fotosintesis
     {
       type: 'quiz',
-      question: 'Gambar tersebut menunjukkan proses fotosintesis tanaman.',
-      imageUrl: 'assets/3.jpg',
-      options: [
-        { text: 'Fotosintesis', correct: true, imageUrl: 'assets/option-a.jpg' },
-        { text: 'Respirasi', correct: false, imageUrl: 'assets/option-b.jpg' },
-        { text: 'Transpirasi', correct: false, imageUrl: 'assets/option-c.jpg' }
-      ],
+question: 'Perhatikan gambar di bawah ini! 
+assets/Picture1-1749748241692.jpg
+Organisme yang dapat menggunakan energi yang tersimpan dalam gambar di atas adalah ... ',
+
+options: [
+  {    text: 'Tumbuhan melalui proses fotosintesis',    correct: true,  },
+  {    text: 'Hewan melalui proses fotosintesis',    correct: false,  },
+  {    text: 'Tumbuhan melalui proses respirasi',    correct: false,  }
+],
       icon: '🌱'
     },
 
