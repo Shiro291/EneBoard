@@ -15,13 +15,13 @@ const levels = {
     // 3. Quiz C1: Pengertian Energi
     {
       type: 'quiz',
-      question: 'Apa pengertian energi?',
-      imageUrl: 'assets/placeholder.jpg',
-      options: [
-        { text: 'Kemampuan untuk bergerak', correct: false },
-        { text: 'Kemampuan melakukan usaha', correct: true},
-        { text: 'Benda yang menghasilkan panas', correct: false}
-      ],
+question: 'Nanda mengangkat ember berisi air dari lantai ke atas meja. Kemampuan Nanda untuk melakukan usaha tersebut disebut sebagai...',
+
+options: [
+  {    text: 'Gaya',    correct: false,  },
+  {    text: 'Energi',    correct: true,  },
+  {    text: 'Usaha',    correct: false,  }
+],
       icon: '💡'
     },
 
