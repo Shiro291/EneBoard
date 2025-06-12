@@ -1,7 +1,7 @@
 const levels = {
     level1: [
         // 1. Start
-    { type: 'start', content: 'Selamat datang di dunia energi!', icon: '🏁' },
+    { type: 'start', content: 'Selamat datang di dunia energi!', icon: 'ð' },
 
     // 2. Info: Pengertian Energi
     {
@@ -9,7 +9,7 @@ const levels = {
       content: 'Energi adalah kemampuan untuk melakukan usaha atau aktivitas',
       example: 'Contoh: Lampu menyala menggunakan energi listrik',
       imageUrl: 'assets/placeholder.jpg',
-      icon: '⚡'
+      icon: 'â¡'
     },
 
     // 3. Quiz C1: Pengertian Energi
@@ -22,7 +22,7 @@ const levels = {
         { text: 'Kemampuan melakukan usaha', correct: true},
         { text: 'Benda yang menghasilkan panas', correct: false}
       ],
-      icon: '💡'
+      icon: 'ð¡'
     },
 
     // 4. Quiz C2: Sumber Energi Tak Terbarukan
@@ -35,7 +35,7 @@ const levels = {
         { text: 'Batu bara', correct: true, imageUrl: 'assets/2B.jpg' },
         { text: 'Angin', correct: false, imageUrl: 'assets/2C.jpg' }
       ],
-      icon: '🔥'
+      icon: 'ð¥'
     },
 
 
@@ -49,39 +49,39 @@ const levels = {
         { text: 'Respirasi', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Transpirasi', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🌱'
+      icon: 'ð±'
     },
 
     // 6. Quiz NOMOR 3
     {
       type: 'quiz',
-      question: 'Gambar tersebut merupakan sumber energi untuk …',
+      question: 'Gambar tersebut merupakan sumber energi untuk â¦',
       imageUrl: 'assets/4.jpg',
       options: [
         { text: 'Menyimpan air di dalam tanah', correct: false },
         { text: 'Menghasilkan energi listrik dari angin', correct: false },
         { text: 'Fotosintesis tanaman', correct: true }
       ],
-      icon: '🌞'
+      icon: 'ð'
     },
 
     // 7. Quiz NOMOR 4
     {
       type: 'quiz',
-      question: 'Gambar tersebut merupakan sumber energi utama saat di …',
+      question: 'Gambar tersebut merupakan sumber energi utama saat di â¦',
       imageUrl: 'assets/5.jpg',
       options: [
         { text: 'Taman bermain', correct: false },
         { text: 'Rumah', correct: true },
         { text: 'Ladang pertanian', correct: false }
       ],
-      icon: '🔌'
+      icon: 'ð'
     },
 
     // 8. Quiz NOMOR 6
     {
       type: 'quiz',
-      question: 'Gambar tersebut menunjukkan bentuk energi yang dihasilkan, yaitu …',
+      question: 'Gambar tersebut menunjukkan bentuk energi yang dihasilkan, yaitu â¦',
       imageUrl: 'assets/6.jpg',
       options: [
         { text: 'Energi panas dan bunyi', correct: false },
@@ -89,59 +89,59 @@ const levels = {
         { text: 'Energi gerak dan cahaya', correct: false },
         { text: 'Energi kimia dan gerak', correct: false }
       ],
-      icon: '💡'
+      icon: 'ð¡'
     },
 
     // 9. Quiz NOMOR 7
     {
       type: 'quiz',
-      question: 'Dari gambar tersebut, bentuk energi yang dihasilkan adalah …',
+      question: 'Dari gambar tersebut, bentuk energi yang dihasilkan adalah â¦',
       imageUrl: 'assets/7.jpg',
       options: [
         { text: 'Energi cahaya', correct: false },
         { text: 'Energi panas', correct: false },
         { text: 'Energi gerak', correct: true }
       ],
-      icon: '🌀'
+      icon: 'ð'
     },
 
     // 10. Quiz NOMOR 8
     {
       type: 'quiz',
-      question: 'Dari pernyataan di atas, yang termasuk ke dalam energi panas adalah …',
+      question: 'Dari pernyataan di atas, yang termasuk ke dalam energi panas adalah â¦',
       imageUrl: 'assets/8.jpg',
       options: [
         { text: '(ii), (iii), dan (v)', correct: false },
         { text: '(i), (iii), dan (iv)', correct: true },
         { text: '(i), (ii), dan (v)', correct: false }
       ],
-      icon: '🔥'
+      icon: 'ð¥'
     },
 
     // 11. Quiz NOMOR 9
     {
       type: 'quiz',
-      question: 'Energi yang tersimpan di dalam baterai merupakan contoh dari …',
+      question: 'Energi yang tersimpan di dalam baterai merupakan contoh dari â¦',
       imageUrl: 'assets/9.jpg',
       options: [
         { text: 'Energi panas', correct: false },
         { text: 'Energi kimia', correct: true },
         { text: 'Energi gerak', correct: false }
       ],
-      icon: '🔋'
+      icon: 'ð'
     },
 
     // 12. Quiz NOMOR 10
     {
       type: 'quiz',
-      question: 'Energi yang dihasilkan dari alat pada gambar tersebut adalah …',
+      question: 'Energi yang dihasilkan dari alat pada gambar tersebut adalah â¦',
       imageUrl: 'assets/10.jpg',
       options: [
         { text: 'Energi cahaya', correct: false },
         { text: 'Energi bunyi', correct: true },
         { text: 'Energi panas', correct: false }
       ],
-      icon: '🔊'
+      icon: 'ð'
     },
 
     // 13. Info: Bentuk Energi
@@ -150,25 +150,25 @@ const levels = {
       content: 'Energi memiliki berbagai bentuk: cahaya, gerak, panas, bunyi',
       example: 'Contoh: Lampu menghasilkan energi cahaya',
       imageUrl: 'assets/energy-forms.jpg',
-      icon: '🌈'
+      icon: 'ð'
     },
 
     // 14. Reward: +10 Poin
     {
       type: 'reward',
-      content: '+10 Poin! 🌟 Kerja bagus, kamu memahami energi dengan baik!',
-      icon: '⭐'
+      content: '+10 Poin! ð Kerja bagus, kamu memahami energi dengan baik!',
+      icon: 'â­'
     },
 
     // 15. Finish Level 1
     {
       type: 'finish',
       content: 'Level 1 Selesai! Lanjut ke transformasi energi!',
-      icon: '🏆'
+      icon: 'ð'
     }
   ],
    level2: [
-    { type: 'start', content: 'Siap belajar perubahan energi?', icon: '🏁' },
+    { type: 'start', content: 'Siap belajar perubahan energi?', icon: 'ð' },
 
     // Quiz 1 (Correct answer now 3rd option)
     {
@@ -180,7 +180,7 @@ const levels = {
         { text: 'Kualitas air minum meningkat karena sungai tidak tercemar limbah', correct: false, imageUrl: 'assets/option-c.jpg' },
         { text: 'Pemadaman listrik bergilir delapan jam per hari karena turbin PLTA tidak bisa beroperasi tanpa aliran air yang memadai', correct: true, imageUrl: 'assets/option-a.jpg' }
       ],
-      icon: '💧'
+      icon: 'ð§'
     },
 
     // Info: PLTA dan cuaca
@@ -189,24 +189,24 @@ const levels = {
       content: 'PLTA sangat tergantung pada debit air. Saat kemarau panjang, kapasitas pembangkitan turun drastis.',
       example: 'Musim kemarau = risiko pemadaman',
       imageUrl: 'assets/info-plta.jpg',
-      icon: 'ℹ️'
+      icon: 'â¹ï¸'
     },
 
     // Quiz 2 (Correct answer moved to 2nd)
     {
       type: 'quiz',
-      question: 'Pabrik tempe “Sari Rasa” di Malang menghasilkan dua ton ampas kedelai per hari. Bagaimana limbah ini dapat diubah menjadi energi alternatif?',
+      question: 'Pabrik tempe âSari Rasaâ di Malang menghasilkan dua ton ampas kedelai per hari. Bagaimana limbah ini dapat diubah menjadi energi alternatif?',
       imageUrl: 'assets/question-2.jpg',
       options: [
         { text: 'Dijadikan pakan ternak tanpa proses konversi energi', correct: false, imageUrl: 'assets/option-c.jpg' },
         { text: 'Diolah menjadi biogas melalui fermentasi anaerobik karena ampas kedelai mengandung bahan organik yang dapat menghasilkan metana', correct: true, imageUrl: 'assets/option-a.jpg' },
         { text: 'Dibakar langsung untuk menghasilkan panas meski menimbulkan polusi udara', correct: false, imageUrl: 'assets/option-b.jpg' }
       ],
-      icon: '🧪'
+      icon: 'ð§ª'
     },
 
     // Reward (early)
-    { type: 'reward', content: '+10 Poin! 🎉 Kamu berhasil menjawab dengan benar!', icon: '⭐' },
+    { type: 'reward', content: '+10 Poin! ð Kamu berhasil menjawab dengan benar!', icon: 'â­' },
 
     // Quiz 3 (Correct answer 1st -> moved to 2nd)
     {
@@ -218,7 +218,7 @@ const levels = {
         { text: 'Baterai listrik karena emisi nol dan menghemat bahan bakar saat kendaraan diam', correct: true, imageUrl: 'assets/option-a.jpg' },
         { text: 'Kombinasi keduanya agar mesin tidak cepat panas dan baterai tetap terisi', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🚌'
+      icon: 'ð'
     },
 
     // Quiz 4 (Correct answer -> moved to last)
@@ -231,7 +231,7 @@ const levels = {
         { text: 'Generator diesel meski mahal dan menimbulkan polusi', correct: false, imageUrl: 'assets/option-c.jpg' },
         { text: 'Pembangkit listrik tenaga air mikrohidro memanfaatkan aliran sungai untuk menggerakkan turbin kecil', correct: true, imageUrl: 'assets/option-a.jpg' }
       ],
-      icon: '🏞️'
+      icon: 'ðï¸'
     },
 
     // Quiz 5 (Correct moved to 2nd)
@@ -244,7 +244,7 @@ const levels = {
         { text: 'Tagihan listrik turun hingga lima puluh persen karena LED mengonsumsi daya jauh lebih rendah', correct: true, imageUrl: 'assets/option-a.jpg' },
         { text: 'Cahaya menjadi lebih redup meski nyala lampu terasa sama terang bagi penglihatan', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '💡'
+      icon: 'ð¡'
     },
 
     // Quiz 6 (Correct -> moved to 3rd)
@@ -257,7 +257,7 @@ const levels = {
         { text: 'Dijual ke pabrik sabun yang tidak terkait produksi energi', correct: false, imageUrl: 'assets/option-c.jpg' },
         { text: 'Dikonversi menjadi biodiesel melalui proses transesterifikasi untuk bahan bakar mesin diesel', correct: true, imageUrl: 'assets/option-a.jpg' }
       ],
-      icon: '🍳'
+      icon: 'ð³'
     },
 
     // Info: Keuntungan Energi Alternatif
@@ -266,7 +266,7 @@ const levels = {
       content: 'Energi alternatif mengurangi ketergantungan pada bahan bakar fosil, menurunkan polusi, dan bisa memanfaatkan limbah lokal.',
       example: 'Biogas, mikrohidro, biodiesel',
       imageUrl: 'assets/alternative-benefits.jpg',
-      icon: '🌱'
+      icon: 'ð±'
     },
 
     // Quiz 7 (Correct -> moved to 2nd)
@@ -279,7 +279,7 @@ const levels = {
         { text: 'Intensitas cahaya matahari rendah karena awan tebal menghalangi penyerapan energi surya', correct: true, imageUrl: 'assets/option-a.jpg' },
         { text: 'Nelayan lebih sering melaut siang hari sehingga sistem malam tidak optimal', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '⛵'
+      icon: 'âµ'
     },
 
     // Quiz 8 (Correct -> moved to 1st)
@@ -292,20 +292,20 @@ const levels = {
         { text: 'Membatasi jam operasional AC yang mengurangi kenyamanan pengunjung', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Mengganti lampu dekorasi dengan lilin yang tidak praktis dan berisiko kebakaran', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🏬'
+      icon: 'ð¬'
     },
 
     // Quiz 9 (Correct -> 2nd)
     {
       type: 'quiz',
-      question: 'Pabrik di Semarang menghasilkan limbah panas 400°C dari mesin produksi. Bagaimana memanfaatkan limbah ini untuk menurunkan biaya operasional?',
+      question: 'Pabrik di Semarang menghasilkan limbah panas 400Â°C dari mesin produksi. Bagaimana memanfaatkan limbah ini untuk menurunkan biaya operasional?',
       imageUrl: 'assets/question-9.jpg',
       options: [
         { text: 'Membuang panas ke atmosfer melalui cerobong asap yang membuang potensi energi', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Menggunakan turbin uap untuk menghasilkan listrik tambahan dari limbah panas', correct: true, imageUrl: 'assets/option-a.jpg' },
         { text: 'Menyalurkan panas ke pemukiman warga yang teknisnya tidak feasible', correct: false, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🏭'
+      icon: 'ð­'
     },
 
     // Quiz 10 (Correct -> 3rd)
@@ -318,16 +318,16 @@ const levels = {
         { text: 'Dibuang ke laut yang mencemari ekosistem', correct: false, imageUrl: 'assets/option-c.jpg' },
         { text: 'Dibuat menjadi briket arang sabut kelapa yang memiliki nilai kalori tinggi dan mudah dibakar', correct: true, imageUrl: 'assets/option-a.jpg' }
       ],
-      icon: '🥥'
+      icon: 'ð¥¥'
     },
 
     // Finish Level 2
-    { type: 'finish', content: 'Level 2 Tuntas! Siap melangkah ke energi terbarukan lanjutan?', icon: '🏆' }
+    { type: 'finish', content: 'Level 2 Tuntas! Siap melangkah ke energi terbarukan lanjutan?', icon: 'ð' }
   ],      
     
     level3: [
     // 1. Start Level 3
-    { type: 'start', content: 'Tantangan besar: integrasi energi & air bersih!', icon: '🏁' },
+    { type: 'start', content: 'Tantangan besar: integrasi energi & air bersih!', icon: 'ð' },
 
     // 2. Quiz L3-1
     {
@@ -339,7 +339,7 @@ const levels = {
         { text: 'Generator diesel dan unit pengolahan air hujan mahal, bergantung suku cadang terbatas, kurang berkelanjutan', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Panel surya terintegrasi dengan sistem desalinasi tenaga matahari sehingga menghasilkan listrik sekaligus air tawar operasional', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '☀️'
+      icon: 'âï¸'
     },
 
     // 3. Info: Panel Surya & Desalinasi
@@ -348,20 +348,20 @@ const levels = {
       content: 'Kombinasi panel surya dan teknologi desalinasi memungkinkan pemanfaatan energi matahari sekaligus pengolahan air laut menjadi air minum.',
       example: 'Panel + reverse osmosis tenaga surya',
       imageUrl: 'assets/info-desalination.jpg',
-      icon: '💧'
+      icon: 'ð§'
     },
 
     // 4. Quiz L3-2
     {
       type: 'quiz',
-      question: 'Kota Jakarta ingin mengurangi 30% emisi CO₂ dari 10.000 angkutan umum berbahan bakar solar. Kebijakan apa yang paling efektif jangka panjang?',
+      question: 'Kota Jakarta ingin mengurangi 30% emisi COâ dari 10.000 angkutan umum berbahan bakar solar. Kebijakan apa yang paling efektif jangka panjang?',
       imageUrl: 'assets/question-l3-2.jpg',
       options: [
         { text: 'Membatasi jam operasi bus hanya solusi sementara tanpa mengubah sumber energi', correct: false, imageUrl: 'assets/option-a.jpg' },
         { text: 'Menambah pajak kendaraan pribadi tidak langsung menyasar polusi bus', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Mengonversi seluruh armada menjadi bus listrik menghilangkan emisi langsung dan menurunkan ketergantungan solar', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🚍'
+      icon: 'ð'
     },
 
     // 5. Quiz L3-3
@@ -374,11 +374,11 @@ const levels = {
         { text: 'Generator diesel mahal, suplai bahan bakar rentan terputus', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Mikrohidro skala kecil memanfaatkan aliran sungai + biogas dari limbah hutan memberikan listrik dan gas memasak', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🌳'
+      icon: 'ð³'
     },
 
     // 6. Reward: +15 Poin
-    { type: 'reward', content: '+15 Poin! 🌟 Ide solutifmu brilian!', icon: '⭐' },
+    { type: 'reward', content: '+15 Poin! ð Ide solutifmu brilian!', icon: 'â­' },
 
     // 7. Info: Energi Terbarukan Terpadu
     {
@@ -386,7 +386,7 @@ const levels = {
       content: 'Menggabungkan mikrohidro dan biogas memberikan pasokan listrik stabil dan gas untuk kebutuhan memasak di daerah terpencil.',
       example: 'Mikrohidro + fermentasi limbah kayu',
       imageUrl: 'assets/info-combined.jpg',
-      icon: '🔄'
+      icon: 'ð'
     },
 
     // 8. Quiz L3-4
@@ -399,7 +399,7 @@ const levels = {
         { text: 'Dijual ke pabrik kertas bukan solusi energi langsung', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Fermentasi limbah menjadi biogas untuk listrik dan residu jadi pupuk organik mengurangi polusi', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🌴'
+      icon: 'ð´'
     },
 
     // 9. Quiz L3-5
@@ -412,7 +412,7 @@ const levels = {
         { text: 'Kincir angin tidak optimal karena kecepatan angin di lembah tidak konsisten', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Panel surya tahan badai dengan baterai lithium menyimpan cadangan energi cocok untuk iklim ekstrem', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🩺'
+      icon: 'ð©º'
     },
 
     // 10. Info: Solar Resilience
@@ -421,20 +421,20 @@ const levels = {
       content: 'Panel surya modern dilapisi pelindung tahan air dan angin sehingga cocok untuk lokasi rawan cuaca ekstrem.',
       example: 'Solar 72-cell dengan casing tahan banting',
       imageUrl: 'assets/info-solar.jpg',
-      icon: '🌞'
+      icon: 'ð'
     },
 
     // 11. Quiz L3-6
     {
       type: 'quiz',
-      question: 'Pabrik tekstil di Surabaya menghasilkan limbah panas 600°C. Bagaimana memanfaatkannya untuk mengurangi biaya operasional?',
+      question: 'Pabrik tekstil di Surabaya menghasilkan limbah panas 600Â°C. Bagaimana memanfaatkannya untuk mengurangi biaya operasional?',
       imageUrl: 'assets/question-l3-6.jpg',
       options: [
         { text: 'Menyalurkan panas ke perumahan tidak feasible dari segi distribusi', correct: false, imageUrl: 'assets/option-a.jpg' },
         { text: 'Membuang panas melalui cerobong asap membuang energi potensial', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Menggunakan turbin uap dari limbah panas menghasilkan listrik tambahan dan menurunkan biaya', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🏭'
+      icon: 'ð­'
     },
 
     // 12. Quiz L3-7
@@ -447,16 +447,16 @@ const levels = {
         { text: 'Membakar tempurung untuk memasak menghasilkan polusi tinggi', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Briket arang sabut, biogas dari tempurung, dan panel surya sistem pendingin air kelapa memanfaatkan semua sumber', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🥥'
+      icon: 'ð¥¥'
     },
 
     // 13. Info: Biaya & Manfaat
     {
       type: 'info',
       content: 'Briket, biogas, dan panel surya memiliki biaya instalasi awal, tapi operasional rendah dan ramah lingkungan.',
-      example: 'Biaya ROI dalam 2–3 tahun',
+      example: 'Biaya ROI dalam 2â3 tahun',
       imageUrl: 'assets/info-cost.jpg',
-      icon: '💰'
+      icon: 'ð°'
     },
 
     // 14. Quiz L3-8
@@ -469,10 +469,10 @@ const levels = {
         { text: 'Kunjungan PLTU tidak mendorong inovasi atau pemahaman konsep', correct: false, imageUrl: 'assets/option-b.jpg' },
         { text: 'Taman edukasi mini dengan mikrohidro, panel surya, biogas siswa belajar langsung dengan simulasi interaktif', correct: true, imageUrl: 'assets/option-c.jpg' }
       ],
-      icon: '🏫'
+      icon: 'ð«'
     },
 
     // 15. Finish Level 3
-    { type: 'finish', content: 'Selamat! Level 3 Tuntas, kamu ahli energi terbarukan!', icon: '🏆' }
+    { type: 'finish', content: 'Selamat! Level 3 Tuntas, kamu ahli energi terbarukan!', icon: 'ð' }
   ]
 };
