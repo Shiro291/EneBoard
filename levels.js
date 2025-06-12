@@ -34,10 +34,8 @@ options: [
 
 // 5. Quiz C3: Fotosintesis
     {
-      type: 'quiz',
-question: 'Perhatikan gambar di bawah ini! 
-assets/Picture1-1749748241692.jpg
-Organisme yang dapat menggunakan energi yang tersimpan dalam gambar di atas adalah ... ',
+     type: 'quiz',
+question: 'Perhatikan gambar di bawah ini! assets/Picture1-1749748241692.jpg Organisme yang dapat menggunakan energi yang tersimpan dalam gambar di atas adalah ... ',
 
 options: [
   {    text: 'Tumbuhan melalui proses fotosintesis',    correct: true,  },
