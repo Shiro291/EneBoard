@@ -35,9 +35,7 @@ options: [
 // 5. Quiz C3: Fotosintesis
     {
      type: 'quiz',
-question: 'Perhatikan gambar di bawah ini!', 
-imageUrl: 'assets/Picture1-1749748241692.jpg', 
-question: 'Organisme yang dapat menggunakan energi yang tersimpan dalam gambar di atas adalah ... ',
+question: '![Gambar](https://raw.githubusercontent.com/Shiro291/EneBoard/main/assets/Picture1-1749748241692.jpg)\n\nOrganisme  yang dapat menggunakan energi yang tersimpan dalam gambar di atas adalah ...', 
 options: [
   {    text: 'Tumbuhan melalui proses fotosintesis',    correct: true,  },
   {    text: 'Hewan melalui proses fotosintesis',    correct: false,  },
